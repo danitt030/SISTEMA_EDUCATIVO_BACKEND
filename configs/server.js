@@ -6,8 +6,13 @@ import helmet from "helmet";
 import morgan from "morgan";
 import cron from "node-cron";
 import axios from "axios";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import { dbConnection } from "./mongo.js";
+import authRoutes from "../src/auth/auth.routes.js";
+
+const CURRENT_DIR = dirname(fileURLToPath(import.meta.url));
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
@@ -16,13 +21,17 @@ const middlewares = (app) => {
     app.use(helmet());
     app.use(morgan("dev"));
     app.use(apiLimiter);
+    // Para subir archivos estaticos
+    app.use("/uploads", express.static(join(CURRENT_DIR, "../public/uploads")));
 };
 
 const routes = (app) => {
     app.get("/ping", (req, res) => {
         res.status(200).json({ message: "pong" });
-    })
-
+    });
+    
+    // Rutas del proyecto
+    app.use("/sistemaEducativo/v1/auth", authRoutes);
 };
 
 const conectarDB = async () => {
