@@ -12,6 +12,7 @@ import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import { dbConnection } from "./mongo.js";
 import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/user/user.routes.js";
+import cursoRoutes from "../src/cursos/cursos.routes.js";
 
 const CURRENT_DIR = dirname(fileURLToPath(import.meta.url));
 
@@ -34,6 +35,7 @@ const routes = (app) => {
     // Rutas del proyecto
     app.use("/sistemaEducativo/v1/auth", authRoutes);
     app.use("/sistemaEducativo/v1/users", userRoutes);
+    app.use("/sistemaEducativo/v1/cursos", cursoRoutes);
 };
 
 const conectarDB = async () => {
