@@ -1,8 +1,9 @@
 import { body, param } from "express-validator";
 import { emailExists, usernameExists, userExists } from "../helpers/db-validators.js";
-import { validarCampos } from "./validate-fields.js";
+import { validateField } from "./validate-fields.js";
 import { validateJWT } from "./validate-jwt.js";
 import { hasRoles } from "./validate-roles.js";
+import { handleErrors } from "./handle-errors.js";
 
 export const registerValidator = [
     body("name").notEmpty().withMessage("El nombre es requerido"),
@@ -15,14 +16,16 @@ export const registerValidator = [
     body("password").isLength({ min: 6 }).withMessage("La contraseña debe tener al menos 6 caracteres"),
     body("phone").notEmpty().withMessage("El teléfono es requerido"),
     body("role").optional().isIn(["ADMIN_ROLE", "COORDINADOR_ROLE", "PROFESOR_ROLE", "PADRE_ROLE", "ALUMNO_ROLE"]).withMessage("Rol no válido"),
-    validarCampos
+    validateField,
+    handleErrors
 ];
 
 export const loginValidator = [
     body("email").optional().isEmail().withMessage("No es un email válido"),
     body("username").optional().notEmpty().withMessage("El username no puede estar vacío"),
     body("password").notEmpty().withMessage("La contraseña es requerida"),
-    validarCampos
+    validateField,
+    handleErrors
 ];
 
 export const getUserByIdValidator = [
@@ -30,7 +33,8 @@ export const getUserByIdValidator = [
     hasRoles("ADMIN_ROLE", "COORDINADOR_ROLE"),
     param("uid").isMongoId().withMessage("No es un ID válido"),
     param("uid").custom(userExists),
-    validarCampos
+    validateField,
+    handleErrors
 ];
 
 export const deleteUserValidator = [
@@ -38,7 +42,8 @@ export const deleteUserValidator = [
     hasRoles("ADMIN_ROLE"),
     param("uid").isMongoId().withMessage("No es un ID válido"),
     param("uid").custom(userExists),
-    validarCampos
+    validateField,
+    handleErrors
 ];
 
 export const updateUserValidator = [
@@ -46,11 +51,49 @@ export const updateUserValidator = [
     hasRoles("ADMIN_ROLE", "COORDINADOR_ROLE"),
     param("uid").isMongoId().withMessage("No es un ID válido"),
     param("uid").custom(userExists),
-    validarCampos
+    validateField,
+    handleErrors
 ];
 
 export const getUsersValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE", "COORDINADOR_ROLE"),
-    validarCampos
+    validateField,
+    handleErrors
+];
+
+export const getUsersByRoleValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE", "COORDINADOR_ROLE", "PROFESOR_ROLE"),
+    param("role").isIn(["ADMIN_ROLE", "COORDINADOR_ROLE", "PROFESOR_ROLE", "PADRE_ROLE", "ALUMNO_ROLE"]).withMessage("Rol no válido"),
+    validateField,
+    handleErrors
+];
+
+export const updatePasswordValidator = [
+    validateJWT,
+    param("uid").isMongoId().withMessage("No es un ID válido"),
+    param("uid").custom(userExists),
+    body("newPassword").isLength({ min: 6 }).withMessage("La contraseña debe tener al menos 6 caracteres"),
+    validateField,
+    handleErrors
+];
+
+export const updateRoleValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    param("uid").isMongoId().withMessage("No es un ID válido"),
+    param("uid").custom(userExists),
+    body("newRole").isIn(["ADMIN_ROLE", "COORDINADOR_ROLE", "PROFESOR_ROLE", "PADRE_ROLE", "ALUMNO_ROLE"]).withMessage("Rol no válido"),
+    validateField,
+    handleErrors
+];
+
+export const eliminarCuentaValidator = [
+    validateJWT,
+    param("uid").isMongoId().withMessage("No es un ID válido"),
+    param("uid").custom(userExists),
+    body("password").notEmpty().withMessage("La contraseña es requerida"),
+    validateField,
+    handleErrors
 ];

@@ -11,6 +11,7 @@ import { fileURLToPath } from "url";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import { dbConnection } from "./mongo.js";
 import authRoutes from "../src/auth/auth.routes.js";
+import userRoutes from "../src/user/user.routes.js";
 
 const CURRENT_DIR = dirname(fileURLToPath(import.meta.url));
 
@@ -32,6 +33,7 @@ const routes = (app) => {
     
     // Rutas del proyecto
     app.use("/sistemaEducativo/v1/auth", authRoutes);
+    app.use("/sistemaEducativo/v1/users", userRoutes);
 };
 
 const conectarDB = async () => {
@@ -45,16 +47,18 @@ const conectarDB = async () => {
 };
 
 export const initServer = () => {
-    const app = express()
+    const app = express();
     try{
-        middlewares(app)
-        conectarDB()
-        routes(app)
-        app.listen(process.env.PORT)
-        console.log(`Server running on port ${process.env.PORT}`)
+        middlewares(app);
+        conectarDB();
+        routes(app);
+        const port = process.env.PORT;
+        app.listen(port, () => {
+            console.log(`Server running on port ${port}`);
+        });
         cron.schedule("*/5 * * * *", async () => {
             try {
-                await axios.get(`http://localhost:${process.env.PORT}/ping`);
+                await axios.get(`http://localhost:${port}/ping`);
                 console.log("Ping interno enviado para mantener el servidor activo");
             }catch(err){
                 console.error("Error al enviar ping:", err.message);
