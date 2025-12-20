@@ -1,6 +1,7 @@
 import User from "../user/user.model.js";
 import Curso from "../cursos/cursos.model.js";
 import Materia from "../materia/materia.model.js";
+import AsignacionEstudiante from "../asignacionEstudiante/asignacionEstudiante.model.js";
 
 export const emailExists = async (email) => {
     const existeEmail = await User.findOne({ email });
@@ -58,5 +59,34 @@ export const validarProfesor = async (uid) => {
     }
     if (user.role !== "PROFESOR_ROLE") {
         throw new Error(`El usuario ${user.name} no tiene rol de profesor`);
+    }
+};
+
+// ==================== ASIGNACIÓN ESTUDIANTES ====================
+
+export const asignacionExists = async (id) => {
+    const existeAsignacion = await AsignacionEstudiante.findById(id);
+    if (!existeAsignacion) {
+        throw new Error(`La asignación con id ${id} no existe`);
+    }
+};
+
+export const validarEstudiante = async (uid) => {
+    const user = await User.findById(uid);
+    if (!user) {
+        throw new Error(`El usuario con id ${uid} no existe`);
+    }
+    if (user.role !== "ALUMNO_ROLE") {
+        throw new Error(`El usuario ${user.name} no tiene rol de estudiante`);
+    }
+};
+
+export const validarEncargado = async (uid) => {
+    const user = await User.findById(uid);
+    if (!user) {
+        throw new Error(`El usuario con id ${uid} no existe`);
+    }
+    if (user.role !== "PADRE_ROLE") {
+        throw new Error(`El usuario ${user.name} no tiene rol de padre/encargado`);
     }
 };
