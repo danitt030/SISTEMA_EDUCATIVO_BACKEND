@@ -2,6 +2,7 @@ import User from "../user/user.model.js";
 import Curso from "../cursos/cursos.model.js";
 import Materia from "../materia/materia.model.js";
 import AsignacionEstudiante from "../asignacionEstudiante/asignacionEstudiante.model.js";
+import Calificacion from "../calificacion/calificacion.model.js";
 
 export const emailExists = async (email) => {
     const existeEmail = await User.findOne({ email });
@@ -88,5 +89,14 @@ export const validarEncargado = async (uid) => {
     }
     if (user.role !== "PADRE_ROLE") {
         throw new Error(`El usuario ${user.name} no tiene rol de padre/encargado`);
+    }
+};
+
+// ==================== CALIFICACIONES ====================
+
+export const calificacionExists = async (id) => {
+    const existeCalificacion = await Calificacion.findById(id);
+    if (!existeCalificacion) {
+        throw new Error(`La calificación con id ${id} no existe`);
     }
 };

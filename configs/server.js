@@ -15,6 +15,7 @@ import userRoutes from "../src/user/user.routes.js";
 import cursoRoutes from "../src/cursos/cursos.routes.js";
 import materiaRoutes from "../src/materia/materia.routes.js";
 import asignacionRoutes from "../src/asignacionEstudiante/asignacionEstudiante.routes.js";
+import calificacionRoutes from "../src/calificacion/calificacion.routes.js";
 
 const CURRENT_DIR = dirname(fileURLToPath(import.meta.url));
 
@@ -40,6 +41,7 @@ const routes = (app) => {
     app.use("/sistemaEducativo/v1/cursos", cursoRoutes);
     app.use("/sistemaEducativo/v1/materias", materiaRoutes);
     app.use("/sistemaEducativo/v1/asignaciones", asignacionRoutes);
+    app.use("/sistemaEducativo/v1/calificaciones", calificacionRoutes);
 };
 
 const conectarDB = async () => {
