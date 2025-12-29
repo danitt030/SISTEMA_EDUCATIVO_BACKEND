@@ -37,11 +37,55 @@ const routes = (app) => {
         res.status(200).json({ message: "pong" });
     });
     
-    // Swagger UI - archivos estáticos (CLAVE para que funcione en Vercel)
-    app.use('/sistemaEducativo/v1/api-docs', express.static('node_modules/swagger-ui-dist'));
+    // Endpoint JSON de la documentación Swagger
+    app.get("/sistemaEducativo/v1/api-docs.json", (req, res) => {
+        res.setHeader("Content-Type", "application/json");
+        res.send(swaggerDocs);
+    });
     
-    // Swagger UI con la documentación
-    app.use("/sistemaEducativo/v1/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+    // Swagger UI con HTML personalizado (funciona en Vercel)
+    app.get("/sistemaEducativo/v1/api-docs", (req, res) => {
+        const html = `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Educativo API - Documentación</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css">
+    <style>
+        html { box-sizing: border-box; overflow-y: scroll; }
+        *, *:before, *:after { box-sizing: inherit; }
+        body { margin: 0; background: #fafafa; }
+        .topbar { display: none; }
+    </style>
+</head>
+<body>
+    <div id="swagger-ui"></div>
+    <script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function() {
+            SwaggerUIBundle({
+                url: window.location.origin + "/sistemaEducativo/v1/api-docs.json",
+                dom_id: '#swagger-ui',
+                deepLinking: true,
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset
+                ],
+                plugins: [
+                    SwaggerUIBundle.plugins.DownloadUrl
+                ],
+                layout: "StandaloneLayout"
+            });
+        };
+    </script>
+</body>
+</html>`;
+        res.setHeader("Content-Type", "text/html");
+        res.send(html);
+    });
     
     // Rutas del proyecto
     app.use("/sistemaEducativo/v1/auth", authRoutes);
