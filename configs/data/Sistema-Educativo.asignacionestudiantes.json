@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "6952b4f33cd5a4b10cadf89e"
+  },
+  "estudiante": {
+    "$oid": "6952a9a03cd5a4b10cadf644"
+  },
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "encargado": {
+    "$oid": "6952a8da3cd5a4b10cadf624"
+  },
+  "cicloEscolar": "2025",
+  "becado": false,
+  "observaciones": "Estudiante regular",
+  "status": true,
+  "fechaInscripcion": {
+    "$date": "2025-12-29T17:05:55.356Z"
+  },
+  "createdAt": {
+    "$date": "2025-12-29T17:05:55.362Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:32:18.354Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b5093cd5a4b10cadf8ae"
+  },
+  "estudiante": {
+    "$oid": "6952a97e3cd5a4b10cadf63c"
+  },
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "encargado": {
+    "$oid": "6952a9043cd5a4b10cadf62c"
+  },
+  "cicloEscolar": "2025",
+  "becado": true,
+  "observaciones": "Beca por excelencia académica",
+  "status": true,
+  "fechaInscripcion": {
+    "$date": "2025-12-29T17:06:17.766Z"
+  },
+  "createdAt": {
+    "$date": "2025-12-29T17:06:17.766Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:06:17.766Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b5463cd5a4b10cadf8be"
+  },
+  "estudiante": {
+    "$oid": "6952a9513cd5a4b10cadf634"
+  },
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "encargado": {
+    "$oid": "6952a9043cd5a4b10cadf62c"
+  },
+  "cicloEscolar": "2025",
+  "becado": true,
+  "observaciones": "Becado por excelencia academica",
+  "status": true,
+  "fechaInscripcion": {
+    "$date": "2025-12-29T17:07:18.680Z"
+  },
+  "createdAt": {
+    "$date": "2025-12-29T17:07:18.681Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:07:18.681Z"
+  }
+}]

@@ -1,0 +1,450 @@
+[{
+  "_id": {
+    "$oid": "6952b5773cd5a4b10cadf92c"
+  },
+  "estudiante": {
+    "$oid": "6952a9a03cd5a4b10cadf644"
+  },
+  "materia": {
+    "$oid": "6952b0be3cd5a4b10cadf76d"
+  },
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 55,
+  "examen": 35,
+  "total": 90,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:08:07.245Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:08:07.245Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b58e3cd5a4b10cadf93e"
+  },
+  "estudiante": {
+    "$oid": "6952a9a03cd5a4b10cadf644"
+  },
+  "materia": {
+    "$oid": "6952b07f3cd5a4b10cadf746"
+  },
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 55,
+  "examen": 40,
+  "total": 95,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:08:30.028Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:08:30.028Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b5a43cd5a4b10cadf950"
+  },
+  "estudiante": {
+    "$oid": "6952a9a03cd5a4b10cadf644"
+  },
+  "materia": {
+    "$oid": "6952b04c3cd5a4b10cadf71f"
+  },
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 60,
+  "examen": 34,
+  "total": 94,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:08:52.461Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:08:52.461Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b5ba3cd5a4b10cadf962"
+  },
+  "estudiante": {
+    "$oid": "6952a9a03cd5a4b10cadf644"
+  },
+  "materia": {
+    "$oid": "6952ae333cd5a4b10cadf6f8"
+  },
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 57,
+  "examen": 38,
+  "total": 95,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:09:14.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:09:14.978Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b5ca3cd5a4b10cadf974"
+  },
+  "estudiante": {
+    "$oid": "6952a9a03cd5a4b10cadf644"
+  },
+  "materia": {
+    "$oid": "6952ac593cd5a4b10cadf6d1"
+  },
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 60,
+  "examen": 40,
+  "total": 100,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:09:30.599Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:09:30.599Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b5ec3cd5a4b10cadf9ca"
+  },
+  "estudiante": {
+    "$oid": "6952a97e3cd5a4b10cadf63c"
+  },
+  "materia": {
+    "$oid": "6952b0ce3cd5a4b10cadf77a"
+  },
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 50,
+  "examen": 35,
+  "total": 85,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:10:04.433Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:10:04.433Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b5f93cd5a4b10cadf9dc"
+  },
+  "estudiante": {
+    "$oid": "6952a97e3cd5a4b10cadf63c"
+  },
+  "materia": {
+    "$oid": "6952b0923cd5a4b10cadf753"
+  },
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 58,
+  "examen": 40,
+  "total": 98,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:10:17.817Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:10:17.817Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b6223cd5a4b10cadf9ee"
+  },
+  "estudiante": {
+    "$oid": "6952a97e3cd5a4b10cadf63c"
+  },
+  "materia": {
+    "$oid": "6952b05a3cd5a4b10cadf72c"
+  },
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 57,
+  "examen": 32,
+  "total": 89,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:10:58.914Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:10:58.914Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b6473cd5a4b10cadfa00"
+  },
+  "estudiante": {
+    "$oid": "6952a97e3cd5a4b10cadf63c"
+  },
+  "materia": {
+    "$oid": "6952ae543cd5a4b10cadf705"
+  },
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 59,
+  "examen": 40,
+  "total": 99,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:11:35.793Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:11:35.793Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b6593cd5a4b10cadfa12"
+  },
+  "estudiante": {
+    "$oid": "6952a97e3cd5a4b10cadf63c"
+  },
+  "materia": {
+    "$oid": "6952ac933cd5a4b10cadf6eb"
+  },
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 60,
+  "examen": 40,
+  "total": 100,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:11:53.348Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:11:53.348Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ba4a3cd5a4b10cadfe1d"
+  },
+  "estudiante": {
+    "$oid": "6952a9513cd5a4b10cadf634"
+  },
+  "materia": {
+    "$oid": "6952b0663cd5a4b10cadf739"
+  },
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 40,
+  "examen": 40,
+  "total": 80,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:28:42.082Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:28:42.082Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ba5a3cd5a4b10cadfe2f"
+  },
+  "estudiante": {
+    "$oid": "6952a9513cd5a4b10cadf634"
+  },
+  "materia": {
+    "$oid": "6952b0363cd5a4b10cadf712"
+  },
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 52,
+  "examen": 32,
+  "total": 84,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:28:58.527Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:28:58.527Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ba6f3cd5a4b10cadfe41"
+  },
+  "estudiante": {
+    "$oid": "6952a9513cd5a4b10cadf634"
+  },
+  "materia": {
+    "$oid": "6952b0a43cd5a4b10cadf760"
+  },
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 60,
+  "examen": 38,
+  "total": 98,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:29:19.034Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:29:19.034Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ba7e3cd5a4b10cadfe53"
+  },
+  "estudiante": {
+    "$oid": "6952a9513cd5a4b10cadf634"
+  },
+  "materia": {
+    "$oid": "6952b0da3cd5a4b10cadf787"
+  },
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 58,
+  "examen": 38,
+  "total": 96,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:29:34.114Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:29:34.114Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ba8c3cd5a4b10cadfe65"
+  },
+  "estudiante": {
+    "$oid": "6952a9513cd5a4b10cadf634"
+  },
+  "materia": {
+    "$oid": "6952ac793cd5a4b10cadf6de"
+  },
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "bimestre": 1,
+  "cicloEscolar": 2025,
+  "zona": 60,
+  "examen": 40,
+  "total": 100,
+  "observaciones": "",
+  "registradoPor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T17:29:48.223Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T17:29:48.223Z"
+  }
+}]

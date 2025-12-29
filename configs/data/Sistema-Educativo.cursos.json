@@ -1,0 +1,216 @@
+[{
+  "_id": {
+    "$oid": "6952aa6b3cd5a4b10cadf653"
+  },
+  "nivel": "PRIMARIA",
+  "grado": "PRIMERO_PRIMARIA",
+  "seccion": "A",
+  "jornada": "MATUTINA",
+  "cicloEscolar": "2025",
+  "capacidadMaxima": 30,
+  "coordinador": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "profesor": {
+    "$oid": "6952a8803cd5a4b10cadf61c"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:20:59.210Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:20:59.210Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952aa983cd5a4b10cadf65e"
+  },
+  "nivel": "PRIMARIA",
+  "grado": "SEGUNDO_PRIMARIA",
+  "seccion": "A",
+  "jornada": "MATUTINA",
+  "cicloEscolar": "2025",
+  "capacidadMaxima": 30,
+  "coordinador": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "profesor": {
+    "$oid": "6952a8803cd5a4b10cadf61c"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:21:44.480Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:21:44.480Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952aaa73cd5a4b10cadf669"
+  },
+  "nivel": "PRIMARIA",
+  "grado": "TERCERO_PRIMARIA",
+  "seccion": "A",
+  "jornada": "MATUTINA",
+  "cicloEscolar": "2025",
+  "capacidadMaxima": 30,
+  "coordinador": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "profesor": {
+    "$oid": "6952a8803cd5a4b10cadf61c"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:21:59.746Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:21:59.746Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952aab53cd5a4b10cadf674"
+  },
+  "nivel": "PRIMARIA",
+  "grado": "CUARTO_PRIMARIA",
+  "seccion": "A",
+  "jornada": "MATUTINA",
+  "cicloEscolar": "2025",
+  "capacidadMaxima": 30,
+  "coordinador": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "profesor": {
+    "$oid": "6952a8803cd5a4b10cadf61c"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:22:13.539Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:22:13.539Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952aac43cd5a4b10cadf67f"
+  },
+  "nivel": "PRIMARIA",
+  "grado": "QUINTO_PRIMARIA",
+  "seccion": "A",
+  "jornada": "MATUTINA",
+  "cicloEscolar": "2025",
+  "capacidadMaxima": 30,
+  "coordinador": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "profesor": {
+    "$oid": "6952a8803cd5a4b10cadf61c"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:22:28.187Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:22:28.187Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952aad23cd5a4b10cadf68a"
+  },
+  "nivel": "PRIMARIA",
+  "grado": "SEXTO_PRIMARIA",
+  "seccion": "A",
+  "jornada": "MATUTINA",
+  "cicloEscolar": "2025",
+  "capacidadMaxima": 30,
+  "coordinador": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "profesor": {
+    "$oid": "6952a8803cd5a4b10cadf61c"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:22:42.080Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:22:42.080Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "nivel": "BASICO",
+  "grado": "PRIMERO_BASICO",
+  "seccion": "A",
+  "jornada": "MATUTINA",
+  "cicloEscolar": "2025",
+  "capacidadMaxima": 30,
+  "coordinador": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:22:59.273Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:22:59.273Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "nivel": "BASICO",
+  "grado": "SEGUNDO_BASICO",
+  "seccion": "A",
+  "jornada": "MATUTINA",
+  "cicloEscolar": "2025",
+  "capacidadMaxima": 30,
+  "coordinador": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:23:11.645Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:23:11.645Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "nivel": "BASICO",
+  "grado": "TERCERO_BASICO",
+  "seccion": "A",
+  "jornada": "MATUTINA",
+  "cicloEscolar": "2025",
+  "capacidadMaxima": 30,
+  "coordinador": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:23:39.066Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:23:39.066Z"
+  }
+}]

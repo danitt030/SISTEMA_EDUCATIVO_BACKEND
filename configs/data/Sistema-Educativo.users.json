@@ -1,0 +1,189 @@
+[{
+  "_id": {
+    "$oid": "6952a6d23cd5a4b10cadf5a0"
+  },
+  "name": "Administrador",
+  "surname": "Sistema",
+  "username": "admin",
+  "email": "admin@sistema.edu",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$LMZHtej6sWlrKZOCgUh7xw$FQSELqeabtXkI5vFBfdR/qiDWKU3qzPA6zO7gJHahjE",
+  "phone": "+502 0000-0000",
+  "profilePicture": null,
+  "role": "ADMIN_ROLE",
+  "codigoEmpleado": "ADMIN-001",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:05:38.982Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:05:38.982Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952a7f63cd5a4b10cadf60c"
+  },
+  "name": "María",
+  "surname": "González Pérez",
+  "username": "mgonzalez",
+  "email": "maria.gonzalez@sistema.edu",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Ydd5HF5YHBFgG9eJkBKWGQ$OlKP++1A80wYvHA+TAviTWJq/Lb5q5jxP4/+iQhLDcM",
+  "phone": "+502 5555-1234",
+  "profilePicture": null,
+  "role": "COORDINADOR_ROLE",
+  "codigoEmpleado": "EMP-0002",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:10:30.365Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:10:30.365Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "name": "Carlos",
+  "surname": "Ramírez López",
+  "username": "cramirez",
+  "email": "carlos.ramirez@sistema.edu",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$hbJMMBVu/Z2MzxNWTcP6HQ$NC1iCx2SNSj8ZdLz9H1clAPw13kXsfXKFFGDnn2/PSM",
+  "phone": "+502 5555-2345",
+  "profilePicture": null,
+  "role": "PROFESOR_ROLE",
+  "codigoEmpleado": "EMP-0003",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:12:00.428Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:12:00.428Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952a8803cd5a4b10cadf61c"
+  },
+  "name": "Ana",
+  "surname": "Martínez Soto",
+  "username": "amartinez",
+  "email": "ana.martinez@sistema.edu",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$UmRbhdf7LXNZ04xke3rnVA$bxiKGxnwRlhIl4IoybCtu0W8LVCbJaLKiFZBpQTPMxY",
+  "phone": "+502 5555-3456",
+  "profilePicture": null,
+  "role": "PROFESOR_ROLE",
+  "codigoEmpleado": "EMP-0004",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:12:48.480Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:12:48.480Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952a8da3cd5a4b10cadf624"
+  },
+  "name": "Roberto",
+  "surname": "Hernández Cruz",
+  "username": "rhernandez",
+  "email": "roberto.hernandez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$LlmlCiajROzshj/LENa12g$jvzPbRe7X+7jgx10+GyFXV8/d7pivfhGXufRuC/VrJg",
+  "phone": "+502 5555-4567",
+  "profilePicture": null,
+  "role": "PADRE_ROLE",
+  "codigoPadre": "PAD-0001",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:14:18.722Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:14:18.722Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952a9043cd5a4b10cadf62c"
+  },
+  "name": "Lucía",
+  "surname": "Morales Vega",
+  "username": "lmorales",
+  "email": "lucia.morales@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Mf3QlhAGZIFiKwtnGGNiZQ$bv0w7d3R+BRlvsnMj/Bs5w08e2Y6U91F6zsNTL5qBg8",
+  "phone": "+502 5555-5678",
+  "profilePicture": null,
+  "role": "PADRE_ROLE",
+  "codigoPadre": "PAD-0002",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:15:00.136Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:15:00.136Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952a9513cd5a4b10cadf634"
+  },
+  "name": "Diego",
+  "surname": "Hernández García",
+  "username": "dhernandez",
+  "email": "diego.hernandez@estudiante.edu",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$yQMIvyOeT5cZ8kKdFAmnTg$Lw+DLGp8fHGiJxzgmZI8R+jhopH+BVEBJm9I15b9RDQ",
+  "phone": "+502 5555-6789",
+  "profilePicture": null,
+  "role": "ALUMNO_ROLE",
+  "codigoEstudiante": "EST-0001",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:16:17.220Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:16:17.220Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952a97e3cd5a4b10cadf63c"
+  },
+  "name": "Sofía",
+  "surname": "Morales Luna",
+  "username": "smorales",
+  "email": "sofia.morales@estudiante.edu",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$aKY3xMYXg4LeXczpvcLWQA$j3XAG9Q6qIp5L7w9SK2gPzlP9TmdUMt80E/SNq+NVig",
+  "phone": "+502 5555-7890",
+  "profilePicture": null,
+  "role": "ALUMNO_ROLE",
+  "codigoEstudiante": "EST-0002",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:17:02.170Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:17:02.170Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952a9a03cd5a4b10cadf644"
+  },
+  "name": "Andrés",
+  "surname": "López Mendoza",
+  "username": "alopez",
+  "email": "andres.lopez@estudiante.edu",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$fq7eKtG+3ACYzGfwsiyAGQ$e0bgQvWfoBi+Fnwwq8txyDcnzCENq10iU9CytUE0kmA",
+  "phone": "+502 5555-8901",
+  "profilePicture": null,
+  "role": "ALUMNO_ROLE",
+  "codigoEstudiante": "EST-0003",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:17:36.624Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:17:36.624Z"
+  }
+}]
