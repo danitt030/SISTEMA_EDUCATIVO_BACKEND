@@ -1,14 +1,8 @@
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 
-// Detectar entorno para usar la URL correcta
-const isProduction = process.env.NODE_ENV === "production";
-const serverUrl = isProduction 
-    ? process.env.API_URL || "https://sistema-educativo-backend.vercel.app/sistemaEducativo/v1"
-    : `http://127.0.0.1:${process.env.PORT || 3002}/sistemaEducativo/v1`;
-
 const options = {
-    swaggerDefinition: {
+    definition: { 
         openapi: "3.0.0",
         info: {
             title: "Sistema Educativo API",
@@ -21,17 +15,18 @@ const options = {
         },
         servers: [
             {
-                url: serverUrl,
-                description: isProduction ? "Servidor de Producción" : "Servidor de Desarrollo"
+                url: process.env.NODE_ENV === 'production' 
+                    ? `https://${process.env.VERCEL_URL}/sistemaEducativo/v1`
+                    : "http://127.0.0.1:3002/sistemaEducativo/v1",
+                description: process.env.NODE_ENV === 'production' ? 'Servidor de Producción' : 'Servidor de Desarrollo'
             }
         ],
         components: {
             securitySchemes: {
                 bearerAuth: {
-                    type: "http",
-                    scheme: "bearer",
-                    bearerFormat: "JWT",
-                    description: "Ingresa tu token JWT"
+                    type: 'http',
+                    scheme: 'bearer',
+                    bearerFormat: 'JWT'
                 }
             }
         },

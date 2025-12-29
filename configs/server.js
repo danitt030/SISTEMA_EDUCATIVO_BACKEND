@@ -37,53 +37,11 @@ const routes = (app) => {
         res.status(200).json({ message: "pong" });
     });
     
-    // Endpoint JSON de Swagger
-    app.get("/api-docs.json", (req, res) => {
-        res.setHeader("Content-Type", "application/json");
-        res.send(swaggerDocs);
-    });
-
-    // Swagger UI usando CDN (funciona en Vercel)
-    app.get("/api-docs", (req, res) => {
-        const html = `
-        <!DOCTYPE html>
-        <html lang="es">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Sistema Educativo API - Documentación</title>
-            <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui.css" />
-            <style>
-                body { margin: 0; padding: 0; }
-                .swagger-ui .topbar { display: none; }
-                .swagger-ui .info .title { color: #3b82f6; }
-            </style>
-        </head>
-        <body>
-            <div id="swagger-ui"></div>
-            <script src="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui-bundle.js"></script>
-            <script>
-                window.onload = function() {
-                    SwaggerUIBundle({
-                        url: "/api-docs.json",
-                        dom_id: '#swagger-ui',
-                        presets: [
-                            SwaggerUIBundle.presets.apis,
-                            SwaggerUIBundle.SwaggerUIStandalonePreset
-                        ],
-                        layout: "BaseLayout",
-                        deepLinking: true,
-                        showExtensions: true,
-                        showCommonExtensions: true
-                    });
-                };
-            </script>
-        </body>
-        </html>
-        `;
-        res.setHeader("Content-Type", "text/html");
-        res.send(html);
-    });
+    // Swagger UI - archivos estáticos (CLAVE para que funcione en Vercel)
+    app.use('/sistemaEducativo/v1/api-docs', express.static('node_modules/swagger-ui-dist'));
+    
+    // Swagger UI con la documentación
+    app.use("/sistemaEducativo/v1/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
     
     // Rutas del proyecto
     app.use("/sistemaEducativo/v1/auth", authRoutes);
