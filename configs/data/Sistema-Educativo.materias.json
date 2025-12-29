@@ -1,0 +1,300 @@
+[{
+  "_id": {
+    "$oid": "6952ac593cd5a4b10cadf6d1"
+  },
+  "nombre": "Matemáticas",
+  "descripcion": "Aritmética, álgebra y geometría básica",
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:29:13.871Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:29:13.871Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ac793cd5a4b10cadf6de"
+  },
+  "nombre": "Matemáticas",
+  "descripcion": "Aritmética, álgebra y geometría básica",
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:29:45.134Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:29:45.134Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ac933cd5a4b10cadf6eb"
+  },
+  "nombre": "Matemáticas",
+  "descripcion": "Aritmética, álgebra y geometría básica",
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:30:11.749Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:30:11.749Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ae333cd5a4b10cadf6f8"
+  },
+  "nombre": "Comunicación y Lenguaje",
+  "descripcion": "Lectura, escritura y comprensión lectora",
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:37:07.301Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:37:07.301Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952ae543cd5a4b10cadf705"
+  },
+  "nombre": "Comunicación y Lenguaje",
+  "descripcion": "Lectura, escritura y comprensión lectora",
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:37:40.762Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:37:40.762Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b0363cd5a4b10cadf712"
+  },
+  "nombre": "Comunicación y Lenguaje",
+  "descripcion": "Lectura, escritura y comprensión lectora",
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:45:42.922Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:45:42.922Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b04c3cd5a4b10cadf71f"
+  },
+  "nombre": "Ciencias Naturales",
+  "descripcion": "Biología, física y química básica",
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:46:04.378Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:46:04.378Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b05a3cd5a4b10cadf72c"
+  },
+  "nombre": "Ciencias Naturales",
+  "descripcion": "Biología, física y química básica",
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:46:18.786Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:46:18.786Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b0663cd5a4b10cadf739"
+  },
+  "nombre": "Ciencias Naturales",
+  "descripcion": "Biología, física y química básica",
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:46:30.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:46:30.371Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b07f3cd5a4b10cadf746"
+  },
+  "nombre": "Estudios Sociales",
+  "descripcion": "Historia, geografía y formación ciudadana",
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:46:55.974Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:46:55.974Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b0923cd5a4b10cadf753"
+  },
+  "nombre": "Estudios Sociales",
+  "descripcion": "Historia, geografía y formación ciudadana",
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:47:14.054Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:47:14.054Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b0a43cd5a4b10cadf760"
+  },
+  "nombre": "Estudios Sociales",
+  "descripcion": "Historia, geografía y formación ciudadana",
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:47:32.035Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:47:32.035Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b0be3cd5a4b10cadf76d"
+  },
+  "nombre": "Inglés",
+  "descripcion": "Idioma inglés nivel básico",
+  "curso": {
+    "$oid": "6952ab0b3cd5a4b10cadf6b1"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:47:58.141Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:47:58.141Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b0ce3cd5a4b10cadf77a"
+  },
+  "nombre": "Inglés",
+  "descripcion": "Idioma inglés nivel básico",
+  "curso": {
+    "$oid": "6952aaef3cd5a4b10cadf6a0"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:48:14.307Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:48:14.307Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6952b0da3cd5a4b10cadf787"
+  },
+  "nombre": "Inglés",
+  "descripcion": "Idioma inglés nivel básico",
+  "curso": {
+    "$oid": "6952aae33cd5a4b10cadf695"
+  },
+  "profesor": {
+    "$oid": "6952a8503cd5a4b10cadf614"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-12-29T16:48:26.903Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-29T16:48:26.903Z"
+  }
+}]
