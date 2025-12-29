@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+﻿import mongoose from "mongoose";
 import Calificacion from "./calificacion.model.js";
 import Materia from "../materia/materia.model.js";
 import AsignacionEstudiante from "../asignacionEstudiante/asignacionEstudiante.model.js";
@@ -431,7 +431,6 @@ export const eliminarCalificacion = async (req, res) => {
         });
     }
 };
-
 // ==================== 8. GENERAR BOLETA PDF ====================
 export const generarBoletaPDF = async (req, res) => {
     try {
@@ -524,102 +523,127 @@ export const generarBoletaPDF = async (req, res) => {
         // ==================== CREAR PDF ====================
         const doc = new PDFDocument({ margin: 50, size: "LETTER" });
 
+        // Formatear nombre para el archivo (sin espacios, mayúsculas)
+        const nombreArchivo = `BOLETA_${estudiante.name.toUpperCase().replace(/\s+/g, '_')}_${estudiante.surname.toUpperCase().replace(/\s+/g, '_')}_${ciclo}.pdf`;
+
         // Configurar headers para descarga
         res.setHeader("Content-Type", "application/pdf");
-        res.setHeader(
-            "Content-Disposition", 
-            `attachment; filename=boleta_${estudiante.codigoEstudiante || estudiante._id}_${ciclo}.pdf`
-        );
+        res.setHeader("Content-Disposition", `attachment; filename=${nombreArchivo}`);
 
         doc.pipe(res);
 
-        // ===== ENCABEZADO =====
-        doc.fontSize(20).font("Helvetica-Bold").text("MI CASITA", { align: "center" });
-        doc.fontSize(10).font("Helvetica").text("Centro Educativo", { align: "center" });
-        doc.moveDown(0.5);
-        doc.fontSize(16).font("Helvetica-Bold").text("BOLETA DE CALIFICACIONES", { align: "center" });
-        doc.moveDown();
+        // ===== ENCABEZADO INSTITUCIONAL =====
+        doc.rect(50, 40, 512, 70).fillAndStroke("#1e3a5f", "#1e3a5f");
+        
+        doc.fillColor("#ffffff");
+        doc.fontSize(22).font("Helvetica-Bold").text("CENTRO EDUCATIVO MI CASITA", 50, 55, { align: "center", width: 512 });
+        doc.fontSize(14).font("Helvetica").text("BOLETA DE CALIFICACIONES", 50, 82, { align: "center", width: 512 });
+        
+        doc.fillColor("#000000");
+        doc.moveDown(2);
 
         // ===== DATOS DEL ESTUDIANTE =====
-        // Formatear el grado para que sea más legible
+        const infoY = 130;
         const gradoFormateado = inscripcion.curso.grado
             ? inscripcion.curso.grado.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase())
             : "Sin grado";
         
-        doc.fontSize(11).font("Helvetica-Bold");
-        doc.text(`Nombre: `, { continued: true }).font("Helvetica").text(`${estudiante.name} ${estudiante.surname}`);
-        doc.font("Helvetica-Bold").text(`Código: `, { continued: true }).font("Helvetica").text(`${estudiante.codigoEstudiante || "N/A"}`);
-        doc.font("Helvetica-Bold").text(`Grado: `, { continued: true }).font("Helvetica").text(`${gradoFormateado} "${inscripcion.curso.seccion || "A"}"`);
-        doc.font("Helvetica-Bold").text(`Jornada: `, { continued: true }).font("Helvetica").text(`${inscripcion.curso.jornada || "MATUTINA"}`);
-        doc.font("Helvetica-Bold").text(`Ciclo Escolar: `, { continued: true }).font("Helvetica").text(`${ciclo}`);
-        doc.moveDown();
+        // Recuadro de información
+        doc.rect(50, infoY, 512, 80).stroke("#1e3a5f");
+        
+        doc.fontSize(10).font("Helvetica-Bold");
+        const col1X = 60;
+        const col2X = 320;
+        
+        doc.text("Estudiante:", col1X, infoY + 12, { continued: true }).font("Helvetica").text(` ${estudiante.name} ${estudiante.surname}`);
+        doc.font("Helvetica-Bold").text("Código:", col2X, infoY + 12, { continued: true }).font("Helvetica").text(` ${estudiante.codigoEstudiante || "N/A"}`);
+        
+        doc.font("Helvetica-Bold").text("Grado:", col1X, infoY + 32, { continued: true }).font("Helvetica").text(` ${gradoFormateado} "${inscripcion.curso.seccion || "A"}"`);
+        doc.font("Helvetica-Bold").text("Jornada:", col2X, infoY + 32, { continued: true }).font("Helvetica").text(` ${inscripcion.curso.jornada || "MATUTINA"}`);
+        
+        doc.font("Helvetica-Bold").text("Ciclo Escolar:", col1X, infoY + 52, { continued: true }).font("Helvetica").text(` ${ciclo}`);
 
         // ===== TABLA DE CALIFICACIONES =====
-        const tableTop = doc.y;
+        const tableTop = infoY + 100;
         const tableLeft = 50;
-        const colWidths = [180, 55, 55, 55, 55, 70]; // Materia, B1, B2, B3, B4, Promedio
-        const rowHeight = 25;
+        const colWidths = [180, 55, 55, 55, 55, 70]; // Materia, B1, B2, B3, B4, Acumulado
+        const rowHeight = 22;
+        const headerHeight = 28;
 
         // Función para dibujar celda
-        const drawCell = (x, y, width, height, text, isHeader = false, align = "center") => {
-            doc.rect(x, y, width, height).stroke();
-            doc.fontSize(isHeader ? 10 : 9);
+        const drawCell = (x, y, width, height, text, options = {}) => {
+            const { isHeader = false, align = "center", fillColor = null, textColor = "#000000" } = options;
+            
+            if (fillColor) {
+                doc.rect(x, y, width, height).fillAndStroke(fillColor, "#1e3a5f");
+                doc.fillColor(textColor);
+            } else {
+                doc.rect(x, y, width, height).stroke("#1e3a5f");
+                doc.fillColor(textColor);
+            }
+            
+            doc.fontSize(isHeader ? 9 : 8);
             doc.font(isHeader ? "Helvetica-Bold" : "Helvetica");
             
-            const textY = y + (height - 10) / 2;
+            const textY = y + (height - 8) / 2;
             if (align === "left") {
                 doc.text(text, x + 5, textY, { width: width - 10, align: "left" });
             } else {
                 doc.text(text, x, textY, { width: width, align: "center" });
             }
+            doc.fillColor("#000000");
         };
 
         // Encabezados de la tabla
         let currentX = tableLeft;
         const headers = ["MATERIA", "B1", "B2", "B3", "B4", "ACUMULADO"];
         headers.forEach((header, i) => {
-            drawCell(currentX, tableTop, colWidths[i], rowHeight, header, true);
+            drawCell(currentX, tableTop, colWidths[i], headerHeight, header, { 
+                isHeader: true, 
+                fillColor: "#1e3a5f", 
+                textColor: "#ffffff" 
+            });
             currentX += colWidths[i];
         });
 
         // Filas de datos
-        let currentY = tableTop + rowHeight;
-        boleta.forEach(row => {
+        let currentY = tableTop + headerHeight;
+        boleta.forEach((row, index) => {
             currentX = tableLeft;
+            const bgColor = index % 2 === 0 ? "#f8fafc" : "#ffffff";
             
-            drawCell(currentX, currentY, colWidths[0], rowHeight, row.materia, false, "left");
+            drawCell(currentX, currentY, colWidths[0], rowHeight, row.materia, { align: "left", fillColor: bgColor });
             currentX += colWidths[0];
             
-            drawCell(currentX, currentY, colWidths[1], rowHeight, row.b1.toString());
+            drawCell(currentX, currentY, colWidths[1], rowHeight, row.b1.toString(), { fillColor: bgColor });
             currentX += colWidths[1];
             
-            drawCell(currentX, currentY, colWidths[2], rowHeight, row.b2.toString());
+            drawCell(currentX, currentY, colWidths[2], rowHeight, row.b2.toString(), { fillColor: bgColor });
             currentX += colWidths[2];
             
-            drawCell(currentX, currentY, colWidths[3], rowHeight, row.b3.toString());
+            drawCell(currentX, currentY, colWidths[3], rowHeight, row.b3.toString(), { fillColor: bgColor });
             currentX += colWidths[3];
             
-            drawCell(currentX, currentY, colWidths[4], rowHeight, row.b4.toString());
+            drawCell(currentX, currentY, colWidths[4], rowHeight, row.b4.toString(), { fillColor: bgColor });
             currentX += colWidths[4];
             
-            // Acumulado
+            // Acumulado con color según aprobación
             const acumuladoText = row.acumulado !== "-" ? row.acumulado.toString() : "-";
-            drawCell(currentX, currentY, colWidths[5], rowHeight, acumuladoText);
+            const acumuladoColor = row.acumulado !== "-" && parseFloat(row.acumulado) < notaMinima ? "#fee2e2" : bgColor;
+            drawCell(currentX, currentY, colWidths[5], rowHeight, acumuladoText, { fillColor: acumuladoColor });
             
             currentY += rowHeight;
         });
 
         // ===== CALCULAR PROMEDIOS Y PERDIDAS POR BIMESTRE =====
-        // Promedio = promedio de las notas ORIGINALES (0-100) de todas las materias
         const calcularPromedioBimestre = (bimestre) => {
             const notas = boleta.map(m => m[bimestre]).filter(n => n !== "-");
             if (notas.length === 0) return "-";
             const suma = notas.reduce((a, b) => a + parseFloat(b), 0);
-            return Math.round(suma / notas.length); // Nota promedio 0-100
+            return Math.round(suma / notas.length);
         };
 
         const calcularPerdidasBimestre = (bimestre) => {
-            // Una materia está perdida si la nota es menor a 60 (básico) o 70 (diversificado)
             const notas = boleta.map(m => m[bimestre]).filter(n => n !== "-");
             return notas.filter(n => parseFloat(n) < notaMinima).length;
         };
@@ -634,62 +658,61 @@ export const generarBoletaPDF = async (req, res) => {
         const perdidasB3 = calcularPerdidasBimestre("b3");
         const perdidasB4 = calcularPerdidasBimestre("b4");
 
-        // Calcular perdidas en acumulado (materias con menos de 60 o 70 puntos acumulados)
-        const perdidasAcumulado = boleta.filter(m => m.acumulado !== "-" && parseFloat(m.acumulado) < notaMinima).length;
-
         // ===== FILA DE PROMEDIOS =====
         currentX = tableLeft;
-        drawCell(currentX, currentY, colWidths[0], rowHeight, "PROMEDIOS", true, "left");
+        drawCell(currentX, currentY, colWidths[0], rowHeight, "PROMEDIOS", { isHeader: true, align: "left", fillColor: "#e2e8f0" });
         currentX += colWidths[0];
-        drawCell(currentX, currentY, colWidths[1], rowHeight, promedioB1.toString(), true);
+        drawCell(currentX, currentY, colWidths[1], rowHeight, promedioB1.toString(), { isHeader: true, fillColor: "#e2e8f0" });
         currentX += colWidths[1];
-        drawCell(currentX, currentY, colWidths[2], rowHeight, promedioB2.toString(), true);
+        drawCell(currentX, currentY, colWidths[2], rowHeight, promedioB2.toString(), { isHeader: true, fillColor: "#e2e8f0" });
         currentX += colWidths[2];
-        drawCell(currentX, currentY, colWidths[3], rowHeight, promedioB3.toString(), true);
+        drawCell(currentX, currentY, colWidths[3], rowHeight, promedioB3.toString(), { isHeader: true, fillColor: "#e2e8f0" });
         currentX += colWidths[3];
-        drawCell(currentX, currentY, colWidths[4], rowHeight, promedioB4.toString(), true);
+        drawCell(currentX, currentY, colWidths[4], rowHeight, promedioB4.toString(), { isHeader: true, fillColor: "#e2e8f0" });
         currentX += colWidths[4];
-        drawCell(currentX, currentY, colWidths[5], rowHeight, `${acumuladoGeneral}`, true);
+        drawCell(currentX, currentY, colWidths[5], rowHeight, `${acumuladoGeneral}`, { isHeader: true, fillColor: "#dbeafe" });
         currentY += rowHeight;
 
         // ===== FILA DE PERDIDAS =====
         currentX = tableLeft;
-        drawCell(currentX, currentY, colWidths[0], rowHeight, "PERDIDAS", true, "left");
+        drawCell(currentX, currentY, colWidths[0], rowHeight, "PERDIDAS", { isHeader: true, align: "left", fillColor: "#fecaca" });
         currentX += colWidths[0];
-        drawCell(currentX, currentY, colWidths[1], rowHeight, perdidasB1.toString(), true);
+        drawCell(currentX, currentY, colWidths[1], rowHeight, perdidasB1.toString(), { isHeader: true, fillColor: "#fecaca" });
         currentX += colWidths[1];
-        drawCell(currentX, currentY, colWidths[2], rowHeight, perdidasB2.toString(), true);
+        drawCell(currentX, currentY, colWidths[2], rowHeight, perdidasB2.toString(), { isHeader: true, fillColor: "#fecaca" });
         currentX += colWidths[2];
-        drawCell(currentX, currentY, colWidths[3], rowHeight, perdidasB3.toString(), true);
+        drawCell(currentX, currentY, colWidths[3], rowHeight, perdidasB3.toString(), { isHeader: true, fillColor: "#fecaca" });
         currentX += colWidths[3];
-        drawCell(currentX, currentY, colWidths[4], rowHeight, perdidasB4.toString(), true);
+        drawCell(currentX, currentY, colWidths[4], rowHeight, perdidasB4.toString(), { isHeader: true, fillColor: "#fecaca" });
         currentX += colWidths[4];
-        // Celda vacía en acumulado para PERDIDAS
-        drawCell(currentX, currentY, colWidths[5], rowHeight, "", true);
+        drawCell(currentX, currentY, colWidths[5], rowHeight, "", { isHeader: true, fillColor: "#fecaca" });
 
         // ===== LEYENDA =====
-        doc.moveDown(3);
-        doc.fontSize(9).font("Helvetica");
-        doc.text(`Nota mínima de aprobación: ${notaMinima} puntos`, tableLeft);
-        doc.text(`ACUMULADO = Suma de puntos por bimestre (cada uno vale 25 pts, máx 100)`, tableLeft);
-        doc.text(`B1, B2, B3, B4 = Bimestres 1, 2, 3 y 4`, tableLeft);
+        currentY += rowHeight + 15;
+        doc.fontSize(8).font("Helvetica").fillColor("#475569");
+        doc.text(`Nota mínima de aprobación: ${notaMinima} puntos | ACUMULADO = Suma de puntos por bimestre (cada uno vale 25 pts, máx 100) | B1-B4 = Bimestres 1 al 4`, tableLeft, currentY, { width: 512 });
+        doc.fillColor("#000000");
 
         // ===== FIRMAS =====
-        const firmaY = doc.page.height - 120;
+        const firmaY = currentY + 60;
+        doc.strokeColor("#1e3a5f");
         doc.moveTo(100, firmaY).lineTo(250, firmaY).stroke();
         doc.moveTo(350, firmaY).lineTo(500, firmaY).stroke();
         
-        doc.fontSize(10);
-        doc.text("Coordinación", 100, firmaY + 5, { width: 150, align: "center" });
-        doc.text("Director(a)", 350, firmaY + 5, { width: 150, align: "center" });
+        doc.fontSize(10).font("Helvetica");
+        doc.text("Coordinación", 100, firmaY + 8, { width: 150, align: "center" });
+        doc.text("Director(a)", 350, firmaY + 8, { width: 150, align: "center" });
 
-        // ===== PIE DE PÁGINA =====
-        doc.fontSize(8).text(
+        // ===== PIE DE PÁGINA (subido, después de las firmas) =====
+        const footerY = firmaY + 50;
+        doc.fontSize(9).fillColor("#c9a227").font("Helvetica-Bold");
+        doc.text(
             `Generado el: ${new Date().toLocaleDateString("es-GT")} - Sistema Educativo Mi Casita`,
             50,
-            doc.page.height - 50,
-            { align: "center" }
+            footerY,
+            { align: "center", width: 512 }
         );
+        doc.fillColor("#000000");
 
         doc.end();
 
