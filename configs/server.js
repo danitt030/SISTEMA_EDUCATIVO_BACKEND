@@ -25,17 +25,13 @@ const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
     app.use(cors());
-    app.use(helmet({
-        contentSecurityPolicy: {
-            directives: {
-                defaultSrc: ["'self'"],
-                scriptSrc: ["'self'", "'unsafe-inline'", "https://unpkg.com"],
-                styleSrc: ["'self'", "'unsafe-inline'", "https://unpkg.com"],
-                imgSrc: ["'self'", "data:", "https://unpkg.com"],
-                connectSrc: ["'self'", "https:"],
-            }
-        }
-    }));
+    // Helmet con CSP desactivado para Swagger UI
+    app.use(
+        helmet({
+            contentSecurityPolicy: false,
+            crossOriginEmbedderPolicy: false,
+        })
+    );
     app.use(morgan("dev"));
     app.use(apiLimiter);
     // Para subir archivos estaticos
