@@ -37,8 +37,19 @@ const routes = (app) => {
         res.status(200).json({ message: "pong" });
     });
     
-    // Documentación Swagger
-    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+    // Endpoint JSON de Swagger (funciona en cualquier entorno)
+    app.get("/api-docs.json", (req, res) => {
+        res.setHeader("Content-Type", "application/json");
+        res.send(swaggerDocs);
+    });
+
+    // Swagger UI con opciones para Vercel
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs, {
+        explorer: true,
+        swaggerOptions: {
+            url: "/api-docs.json"
+        }
+    }));
     
     // Rutas del proyecto
     app.use("/sistemaEducativo/v1/auth", authRoutes);
