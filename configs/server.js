@@ -16,6 +16,8 @@ import cursoRoutes from "../src/cursos/cursos.routes.js";
 import materiaRoutes from "../src/materia/materia.routes.js";
 import asignacionRoutes from "../src/asignacionEstudiante/asignacionEstudiante.routes.js";
 import calificacionRoutes from "../src/calificacion/calificacion.routes.js";
+import { swaggerDocs, swaggerUi } from "./swagger.js";
+import { crearAdmin } from "./admin-default.js";
 
 const CURRENT_DIR = dirname(fileURLToPath(import.meta.url));
 
@@ -35,6 +37,9 @@ const routes = (app) => {
         res.status(200).json({ message: "pong" });
     });
     
+    // Documentación Swagger
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+    
     // Rutas del proyecto
     app.use("/sistemaEducativo/v1/auth", authRoutes);
     app.use("/sistemaEducativo/v1/users", userRoutes);
@@ -46,7 +51,8 @@ const routes = (app) => {
 
 const conectarDB = async () => {
     try {
-        await dbConnection()
+        await dbConnection();
+        await crearAdmin();
         
     } catch (err) {
         console.log(`Database connection failed: ${err}`);

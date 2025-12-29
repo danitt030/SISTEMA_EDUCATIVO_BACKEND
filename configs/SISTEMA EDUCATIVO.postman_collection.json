@@ -1,0 +1,1911 @@
+{
+	"info": {
+		"_postman_id": "50c38292-4918-4e7d-ae39-b3f7637a3bc8",
+		"name": "SISTEMA EDUCATIVO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37636976"
+	},
+	"item": [
+		{
+			"name": "MODULOS USUARIOS",
+			"item": [
+				{
+					"name": "REGISTER ESTUDIANTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Juan\",\r\n  \"surname\": \"Pérez\",\r\n  \"username\": \"juan_perez\",\r\n  \"email\": \"juan@estudiante.com\",\r\n  \"password\": \"123456\",\r\n  \"phone\": \"123456789\",\r\n  \"role\": \"ALUMNO_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER PROFESOR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"María\",\r\n  \"surname\": \"González\",\r\n  \"username\": \"maria_gonzalez\",\r\n  \"email\": \"maria@profesor.com\",\r\n  \"password\": \"123456\",\r\n  \"phone\": \"987654321\",\r\n  \"role\": \"PROFESOR_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER COORDINADOR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"María\",\r\n  \"surname\": \"González\",\r\n  \"username\": \"maria_gonzalez\",\r\n  \"email\": \"maria@profesor.com\",\r\n  \"password\": \"123456\",\r\n  \"phone\": \"987654321\",\r\n  \"role\": \"PROFESOR_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER PADRES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"María\",\r\n  \"surname\": \"González\",\r\n  \"username\": \"maria_gonzalez\",\r\n  \"email\": \"maria@profesor.com\",\r\n  \"password\": \"123456\",\r\n  \"phone\": \"987654321\",\r\n  \"role\": \"PROFESOR_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"María\",\r\n  \"surname\": \"González\",\r\n  \"username\": \"maria_gonzalez\",\r\n  \"email\": \"maria@profesor.com\",\r\n  \"password\": \"123456\",\r\n  \"phone\": \"987654321\",\r\n  \"role\": \"PROFESOR_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER ADMIN PRUEBA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"María\",\r\n  \"surname\": \"González\",\r\n  \"username\": \"maria_gonzalez\",\r\n  \"email\": \"maria@profesor.com\",\r\n  \"password\": \"123456\",\r\n  \"phone\": \"987654321\",\r\n  \"role\": \"PROFESOR_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"maria@profesor.com\",\r\n  \"username\": \"maria_gonzalez\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER USUARIOS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQyNmMzNzM2M2EyYmE1NzcyMGNmNzMiLCJpYXQiOjE3NjYxMDU3MzUsImV4cCI6MTc2NjE5MjEzNX0._U4H8-UcNTV_5jh9Ib9DcV29RJZrAnYsm3S4C-ViozQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER USUARIOS POR ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQyNmMzNzM2M2EyYmE1NzcyMGNmNzMiLCJpYXQiOjE3NjYxMDU3MzUsImV4cCI6MTc2NjE5MjEzNX0._U4H8-UcNTV_5jh9Ib9DcV29RJZrAnYsm3S4C-ViozQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/users/69426c1f363a2ba57720cf6f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"users",
+								"69426c1f363a2ba57720cf6f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER USUARIOS POR ROLE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQyNmMzNzM2M2EyYmE1NzcyMGNmNzMiLCJpYXQiOjE3NjYxMDU3MzUsImV4cCI6MTc2NjE5MjEzNX0._U4H8-UcNTV_5jh9Ib9DcV29RJZrAnYsm3S4C-ViozQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/users/role/ALUMNO_ROLE",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"users",
+								"role",
+								"ALUMNO_ROLE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR USUARIO ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQyNmMzNzM2M2EyYmE1NzcyMGNmNzMiLCJpYXQiOjE3NjYxMDczNjMsImV4cCI6MTc2NjE5Mzc2M30.wUsHafUagx5iNPtr6OlUyu0G5ttj7BzyS7Lkdv2K3N8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"JUAN ANDRES\",\r\n  \"surname\": \"PEREZ LOPEZ\",\r\n  \"phone\": \"99887766\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/users/69426ae2363a2ba57720cf55",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"users",
+								"69426ae2363a2ba57720cf55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR CONTASEÑA CUALQUIER USUARIO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQyNmMzNzM2M2EyYmE1NzcyMGNmNzMiLCJpYXQiOjE3NjYxMDkwOTEsImV4cCI6MTc2NjE5NTQ5MX0.Zw0LbRrzJN6hrvkYI0rC61mm3xQl4B8N3rg_UQdgb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"newPassword\": \"admin1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/users/password/69426ae2363a2ba57720cf55",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"users",
+								"password",
+								"69426ae2363a2ba57720cf55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR ROLE SOLO ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMTA2NTAsImV4cCI6MTc2NjE5NzA1MH0.Y-Xar2CgL4bHzozTqNtXTuzbpneUX9qxYl2TtFWQOww",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"newRole\": \"COORDINADOR_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/users/role/6944b50e58cd4f66a01610fc",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"users",
+								"role",
+								"6944b50e58cd4f66a01610fc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR USUARIO SOLO ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMTA2NTAsImV4cCI6MTc2NjE5NzA1MH0.Y-Xar2CgL4bHzozTqNtXTuzbpneUX9qxYl2TtFWQOww",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/users/6944b8826771bc1e79b8cc97",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"users",
+								"6944b8826771bc1e79b8cc97"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR USUARIO SOLO ADMIN Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjUwZTU4Y2Q0ZjY2YTAxNjEwZmMiLCJpYXQiOjE3NjYxMTExNzEsImV4cCI6MTc2NjE5NzU3MX0.tu68MyMhKDZs6aq5sCjGXCKy2Zz2i1JA14crFAl1nvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/users/account/6944b50e58cd4f66a01610fc",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"users",
+								"account",
+								"6944b50e58cd4f66a01610fc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MODULO CURSOS",
+			"item": [
+				{
+					"name": "CREAR CURSO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMzMzMjMsImV4cCI6MTc2NjIxOTcyM30.2_bj6QXn0GCYtDxc5saGQY5FDDclNjH2EETHzq9tSTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nivel\": \"BASICO\",\r\n    \"grado\": \"PRIMERO_BASICO\",\r\n    \"seccion\": \"A\",\r\n    \"jornada\": \"MATUTINA\",\r\n    \"cicloEscolar\": \"2025\",\r\n    \"capacidadMaxima\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/cursos/crearCurso",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"cursos",
+								"crearCurso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CURSOS ADMIN",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CURSOS POR ID ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMzMzMjMsImV4cCI6MTc2NjIxOTcyM30.2_bj6QXn0GCYtDxc5saGQY5FDDclNjH2EETHzq9tSTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/cursos/69450e71de67798a0df1e578",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"cursos",
+								"69450e71de67798a0df1e578"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CURSOS POR NIVEL ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMzMzMjMsImV4cCI6MTc2NjIxOTcyM30.2_bj6QXn0GCYtDxc5saGQY5FDDclNjH2EETHzq9tSTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/cursos/nivel/PRIMARIA",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"cursos",
+								"nivel",
+								"PRIMARIA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CURSOS POR GRADO ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMzMzMjMsImV4cCI6MTc2NjIxOTcyM30.2_bj6QXn0GCYtDxc5saGQY5FDDclNjH2EETHzq9tSTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/cursos/grado/PRIMERO_PRIMARIA",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"cursos",
+								"grado",
+								"PRIMERO_PRIMARIA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CURSOS POR CICLO ESCOLAR ADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMzMzMjMsImV4cCI6MTc2NjIxOTcyM30.2_bj6QXn0GCYtDxc5saGQY5FDDclNjH2EETHzq9tSTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/cursos/grado/PRIMERO_PRIMARIA",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"cursos",
+								"grado",
+								"PRIMERO_PRIMARIA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CURSOS ID COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMzMzMjMsImV4cCI6MTc2NjIxOTcyM30.2_bj6QXn0GCYtDxc5saGQY5FDDclNjH2EETHzq9tSTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/cursos/coordinador/6944b4488dc23e76873ccdc4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"cursos",
+								"coordinador",
+								"6944b4488dc23e76873ccdc4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR CURSOS POR CICLO ESCOLAR ADMIN Y COORDINADOR Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMzMzMjMsImV4cCI6MTc2NjIxOTcyM30.2_bj6QXn0GCYtDxc5saGQY5FDDclNjH2EETHzq9tSTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seccion\": \"B\",\r\n    \"capacidadMaxima\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/cursos/69450e86de67798a0df1e57e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"cursos",
+								"69450e86de67798a0df1e57e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ASIGNAR COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMzMzMjMsImV4cCI6MTc2NjIxOTcyM30.2_bj6QXn0GCYtDxc5saGQY5FDDclNjH2EETHzq9tSTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"coordinador\": \"6944b4488dc23e76873ccdc4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/cursos/asignar-coordinador/69450e86de67798a0df1e57e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"cursos",
+								"asignar-coordinador",
+								"69450e86de67798a0df1e57e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ASIGNAR COORDINADOR Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYxMzMzMjMsImV4cCI6MTc2NjIxOTcyM30.2_bj6QXn0GCYtDxc5saGQY5FDDclNjH2EETHzq9tSTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/cursos/6945112cb97c93463c48bc43",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"cursos",
+								"6945112cb97c93463c48bc43"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MODULO DE MATERIA",
+			"item": [
+				{
+					"name": "CREAR MATERIA ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Matemáticas\",\r\n    \"descripcion\": \"Curso de álgebra y aritmética básica\",\r\n    \"curso\": \"6945112cb97c93463c48bc43\",\r\n    \"profesor\": \"6944b4448dc23e76873ccdbf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/materias/crearMateria",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"materias",
+								"crearMateria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR MATERIA ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/materias",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"materias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR MATERIA POR ID ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/materias/69465b6b10320aef090f842d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"materias",
+								"69465b6b10320aef090f842d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER POR CURSO LA MATERIA POR ID ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/materias/curso/6945112cb97c93463c48bc43",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"materias",
+								"curso",
+								"6945112cb97c93463c48bc43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER POR PROFESOR LA MATERIA POR ID ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/materias/profesor/6944b4448dc23e76873ccdbf",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"materias",
+								"profesor",
+								"6944b4448dc23e76873ccdbf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR MATERIA POR ID ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Matemáticas Avanzadas\",\r\n    \"descripcion\": \"Álgebra y geometría\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/materias/69465b6b10320aef090f842d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"materias",
+								"69465b6b10320aef090f842d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ASIGNAR PROFESOR A UNA MATERIA POR ID ADMIN O COORDINADOR Copy 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profesor\": \"6944b4448dc23e76873ccdbf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/materias/asignar-profesor/69465d1b10320aef090f8450",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"materias",
+								"asignar-profesor",
+								"69465d1b10320aef090f8450"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR MATERIA ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/materias/69465de710320aef090f845c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"materias",
+								"69465de710320aef090f845c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MODULO DE ESTUDIANTE",
+			"item": [
+				{
+					"name": "INSCRIBIR ESTUDIANTE ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"estudiante\": \"6944b4418dc23e76873ccdba\",\r\n    \"curso\": \"6945112cb97c93463c48bc43\",\r\n    \"encargado\": \"6944b44c8dc23e76873ccdc9\",\r\n    \"cicloEscolar\": \"2025\",\r\n    \"becado\": true,\r\n    \"observaciones\": \"Estudiante nuevo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/asignaciones/inscribir",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"asignaciones",
+								"inscribir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR ESTUDIANTES ADMIN O COORDINADOR Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/asignaciones",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"asignaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR ESTUDIANTES POR ID ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/asignaciones/69466589e80487f92e1dea81",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"asignaciones",
+								"69466589e80487f92e1dea81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR ESTUDIANTES DE UN CURSO ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/asignaciones/curso/6945112cb97c93463c48bc43",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"asignaciones",
+								"curso",
+								"6945112cb97c93463c48bc43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CURSOS DE UN ESTUDIANTE ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/asignaciones/estudiante/6944b4418dc23e76873ccdba",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"asignaciones",
+								"estudiante",
+								"6944b4418dc23e76873ccdba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PADRES DE ESTUDIANTES ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/asignaciones/estudiante/6944b4418dc23e76873ccdba",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"asignaciones",
+								"estudiante",
+								"6944b4418dc23e76873ccdba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR ESTUDIANTE ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"curso\": \"6945112cb97c93463c48bc43\",\r\n    \"encargado\": \"6944b44c8dc23e76873ccdc9\",\r\n    \"cicloEscolar\": \"2026\",\r\n    \"becado\": true,\r\n    \"observaciones\": \"Trasladado y becado para nuevo ciclo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/asignaciones/69466589e80487f92e1dea81",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"asignaciones",
+								"69466589e80487f92e1dea81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CAMBIAR CURSO DE ESTUDIANTE ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"curso\": \"69450e86de67798a0df1e57e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/asignaciones/cambiar-curso/69466589e80487f92e1dea81",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"asignaciones",
+								"cambiar-curso",
+								"69466589e80487f92e1dea81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR ESTUDIANTE ADMIN O COORDINADOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjYyMTc4NjMsImV4cCI6MTc2NjMwNDI2M30.Q8idkRTXj3CcoDr-IN25n90yR1qYWd_6q_juZf_VGUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/asignaciones/69466d404f1b92f83881ff98",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"asignaciones",
+								"69466d404f1b92f83881ff98"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MODULO CALIFICACIONES",
+			"item": [
+				{
+					"name": "COLOCAR CALIFICACION",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjY0NjAwMDIsImV4cCI6MTc2NjU0NjQwMn0.lxVIBg6sYaY4cD99mccNACSJlRcFTpPkeUg0jC0oK1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"estudiante\": \"6944b4418dc23e76873ccdba\",\r\n    \"materia\": \"69465b6b10320aef090f842d\",\r\n    \"curso\": \"6945112cb97c93463c48bc43\",\r\n    \"bimestre\": 1,\r\n    \"cicloEscolar\": 2025,\r\n    \"zona\": 60,\r\n    \"examen\": 40,\r\n    \"observaciones\": \"Buen desempeño\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/calificaciones/registrar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"calificaciones",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CALIFICACIONES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjY0NjAwMDIsImV4cCI6MTc2NjU0NjQwMn0.lxVIBg6sYaY4cD99mccNACSJlRcFTpPkeUg0jC0oK1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/calificaciones",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"calificaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CALIFICACIONES POR ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjY0NjAwMDIsImV4cCI6MTc2NjU0NjQwMn0.lxVIBg6sYaY4cD99mccNACSJlRcFTpPkeUg0jC0oK1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/calificaciones/estudiante/6944b4418dc23e76873ccdba/2025",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"calificaciones",
+								"estudiante",
+								"6944b4418dc23e76873ccdba",
+								"2025"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GENERAR BOLETA DE CALIFICACIONES PDF",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjY0NjAwMDIsImV4cCI6MTc2NjU0NjQwMn0.lxVIBg6sYaY4cD99mccNACSJlRcFTpPkeUg0jC0oK1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/calificaciones/estudiante/6944b4418dc23e76873ccdba/2025",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"calificaciones",
+								"estudiante",
+								"6944b4418dc23e76873ccdba",
+								"2025"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GENERAR BOLETA DE CALIFICACIONES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjY0NjAwMDIsImV4cCI6MTc2NjU0NjQwMn0.lxVIBg6sYaY4cD99mccNACSJlRcFTpPkeUg0jC0oK1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/calificaciones/cuadro/6945112cb97c93463c48bc43/69465b6b10320aef090f842d/1?cicloEscolar=2025",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"calificaciones",
+								"cuadro",
+								"6945112cb97c93463c48bc43",
+								"69465b6b10320aef090f842d",
+								"1"
+							],
+							"query": [
+								{
+									"key": "cicloEscolar",
+									"value": "2025"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER CALIFICACION POR ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjY0NjAwMDIsImV4cCI6MTc2NjU0NjQwMn0.lxVIBg6sYaY4cD99mccNACSJlRcFTpPkeUg0jC0oK1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/calificaciones/694a0c0a1cf48f15d303dbf8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"calificaciones",
+								"694a0c0a1cf48f15d303dbf8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDITAR CALIFICACION ESTUDIANTE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjY0NjAwMDIsImV4cCI6MTc2NjU0NjQwMn0.lxVIBg6sYaY4cD99mccNACSJlRcFTpPkeUg0jC0oK1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"zona\": 60,\r\n    \"examen\": 39,\r\n    \"observaciones\": \"Nota corregida después de revisión\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/calificaciones/694a0c0a1cf48f15d303dbf8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"calificaciones",
+								"694a0c0a1cf48f15d303dbf8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR CALIFICACION ESTUDIANTE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2OTQ0YjQ1MDhkYzIzZTc2ODczY2NkY2QiLCJpYXQiOjE3NjY0NjAwMDIsImV4cCI6MTc2NjU0NjQwMn0.lxVIBg6sYaY4cD99mccNACSJlRcFTpPkeUg0jC0oK1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3002/sistemaEducativo/v1/calificaciones/694a0c0a1cf48f15d303dbf8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"sistemaEducativo",
+								"v1",
+								"calificaciones",
+								"694a0c0a1cf48f15d303dbf8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
