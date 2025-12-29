@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+﻿import mongoose from "mongoose";
 
 const CursoSchema = new mongoose.Schema({
     nivel: {
@@ -14,7 +14,7 @@ const CursoSchema = new mongoose.Schema({
             // Primaria
             "PRIMERO_PRIMARIA", "SEGUNDO_PRIMARIA", "TERCERO_PRIMARIA",
             "CUARTO_PRIMARIA", "QUINTO_PRIMARIA", "SEXTO_PRIMARIA",
-            // Básico
+            // BÃ¡sico
             "PRIMERO_BASICO", "SEGUNDO_BASICO", "TERCERO_BASICO"
         ],
         required: [true, "El grado es requerido"]
@@ -22,7 +22,7 @@ const CursoSchema = new mongoose.Schema({
     seccion: {
         type: String,
         enum: ["A", "B", "C"],
-        required: [true, "La sección es requerida"]
+        required: [true, "La secciÃ³n es requerida"]
     },
     jornada: {
         type: String,
@@ -42,6 +42,11 @@ const CursoSchema = new mongoose.Schema({
         ref: "User",
         default: null
     },
+    profesor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        default: null
+    },
     status: {
         type: Boolean,
         default: true
@@ -51,13 +56,13 @@ const CursoSchema = new mongoose.Schema({
     versionKey: false
 });
 
-// Índice único para evitar cursos duplicados
+// Ãndice Ãºnico para evitar cursos duplicados
 CursoSchema.index(
     { nivel: 1, grado: 1, seccion: 1, jornada: 1, cicloEscolar: 1 },
     { unique: true }
 );
 
-// Método toJSON para limpiar la respuesta
+// MÃ©todo toJSON para limpiar la respuesta
 CursoSchema.methods.toJSON = function() {
     const { _id, ...curso } = this.toObject();
     curso.cid = _id;

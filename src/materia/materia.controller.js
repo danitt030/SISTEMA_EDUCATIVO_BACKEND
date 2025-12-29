@@ -34,7 +34,7 @@ export const crearMateria = async (req, res) => {
 export const obtenerMaterias = async (req, res) => {
     try {
         const { limite = 10, desde = 0 } = req.query;
-        const query = { status: true };
+        const query = {};
 
         const [total, materias] = await Promise.all([
             Materia.countDocuments(query),
@@ -154,9 +154,9 @@ export const obtenerMateriasPorProfesor = async (req, res) => {
 export const actualizarMateria = async (req, res) => {
     try {
         const { id } = req.params;
-        const { _id, status, ...resto } = req.body;
+        const { _id, ...dataToUpdate } = req.body;
 
-        const materiaActualizada = await Materia.findByIdAndUpdate(id, resto, { new: true })
+        const materiaActualizada = await Materia.findByIdAndUpdate(id, dataToUpdate, { new: true })
             .populate("curso", "nivel grado seccion jornada cicloEscolar")
             .populate("profesor", "name surname email codigoEmpleado");
 
@@ -252,3 +252,5 @@ export const eliminarMateria = async (req, res) => {
         });
     }
 };
+
+

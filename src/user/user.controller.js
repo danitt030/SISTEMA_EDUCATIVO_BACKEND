@@ -29,7 +29,7 @@ export const obtenerUsuarioPorId = async (req, res) => {
 export const obtenerUsuarios = async (req, res) => {
     try {
         const { limite = 10, desde = 0 } = req.query;
-        const query = { status: true };
+        const query = {};
 
         const [total, users] = await Promise.all([
             User.countDocuments(query),
@@ -85,7 +85,7 @@ export const obtenerUsuariosPorRole = async (req, res) => {
 export const actualizarUsuario = async (req, res) => {
     try {
         const { uid } = req.params;
-        const { _id, password, role, status, ...resto } = req.body;
+        const { _id, password, role, ...resto } = req.body;
 
         const usuarioActualizado = await User.findByIdAndUpdate(uid, resto, { new: true });
 

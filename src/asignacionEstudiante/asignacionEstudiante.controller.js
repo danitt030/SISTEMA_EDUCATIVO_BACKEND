@@ -1,4 +1,5 @@
-import AsignacionEstudiante from "./asignacionEstudiante.model.js";
+import mongoose from "mongoose";
+﻿import AsignacionEstudiante from "./asignacionEstudiante.model.js";
 
 // Inscribir estudiante a un curso
 export const inscribirEstudiante = async (req, res) => {
@@ -35,7 +36,7 @@ export const inscribirEstudiante = async (req, res) => {
 export const obtenerAsignaciones = async (req, res) => {
     try {
         const { limite = 10, desde = 0 } = req.query;
-        const query = { status: true };
+        const query = {};
 
         const [total, asignaciones] = await Promise.all([
             AsignacionEstudiante.countDocuments(query),
@@ -101,7 +102,7 @@ export const obtenerEstudiantesPorCurso = async (req, res) => {
         const [total, asignaciones] = await Promise.all([
             AsignacionEstudiante.countDocuments(query),
             AsignacionEstudiante.find(query)
-                .populate("estudiante", "name surname email codigoEstudiante profilePicture")
+                .populate("estudiante", "name surname email codigoEstudiante profilePicture uid")
                 .populate("curso", "nivel grado seccion jornada cicloEscolar")
                 .populate("encargado", "name surname email codigoPadre phone")
                 .skip(Number(desde))
@@ -159,13 +160,16 @@ export const obtenerCursosDeEstudiante = async (req, res) => {
 export const obtenerEstudiantesPorEncargado = async (req, res) => {
     try {
         const { uid } = req.params;
-        const { limite = 10, desde = 0 } = req.query;
-        const query = { status: true, encargado: uid };
+        const { limite = 50, desde = 0 } = req.query;
+        
+        // El uid que viene del frontend es el _id (toJSON convierte _id a uid)
+        // Convertir uid string a ObjectId
+        const query = { status: true, encargado: new mongoose.Types.ObjectId(uid) };
 
         const [total, asignaciones] = await Promise.all([
             AsignacionEstudiante.countDocuments(query),
             AsignacionEstudiante.find(query)
-                .populate("estudiante", "name surname email codigoEstudiante profilePicture")
+                .populate("estudiante", "name surname email codigoEstudiante profilePicture uid")
                 .populate("curso", "nivel grado seccion jornada cicloEscolar")
                 .populate("encargado", "name surname email codigoPadre phone")
                 .skip(Number(desde))
@@ -191,9 +195,9 @@ export const obtenerEstudiantesPorEncargado = async (req, res) => {
 export const actualizarAsignacion = async (req, res) => {
     try {
         const { id } = req.params;
-        const { _id, status, estudiante, ...resto } = req.body;
+        const { _id, estudiante, ...dataToUpdate } = req.body;
 
-        const asignacionActualizada = await AsignacionEstudiante.findByIdAndUpdate(id, resto, { new: true })
+        const asignacionActualizada = await AsignacionEstudiante.findByIdAndUpdate(id, dataToUpdate, { new: true })
             .populate("estudiante", "name surname email codigoEstudiante")
             .populate("curso", "nivel grado seccion jornada cicloEscolar")
             .populate("encargado", "name surname email codigoPadre phone");

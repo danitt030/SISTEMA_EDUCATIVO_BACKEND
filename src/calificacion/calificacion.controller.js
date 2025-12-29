@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Calificacion from "./calificacion.model.js";
 import Materia from "../materia/materia.model.js";
 import AsignacionEstudiante from "../asignacionEstudiante/asignacionEstudiante.model.js";
@@ -159,7 +160,7 @@ export const obtenerCalificacionesPorEstudiante = async (req, res) => {
 
         // Obtener inscripción del estudiante
         const inscripcion = await AsignacionEstudiante.findOne({
-            estudiante: uid,
+            estudiante: new mongoose.Types.ObjectId(uid),
             $or: [
                 { cicloEscolar: parseInt(ciclo) },
                 { cicloEscolar: ciclo.toString() }
@@ -176,7 +177,7 @@ export const obtenerCalificacionesPorEstudiante = async (req, res) => {
 
         // Obtener todas las calificaciones del estudiante
         const calificaciones = await Calificacion.find({
-            estudiante: uid,
+            estudiante: new mongoose.Types.ObjectId(uid),
             cicloEscolar: parseInt(ciclo),
             status: true
         })

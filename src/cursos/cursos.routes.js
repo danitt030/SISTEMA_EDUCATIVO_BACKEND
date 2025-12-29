@@ -1,4 +1,4 @@
-import { Router } from "express";
+﻿import { Router } from "express";
 import {
     crearCurso,
     obtenerCursos,
@@ -9,7 +9,8 @@ import {
     obtenerCursosPorCoordinador,
     actualizarCurso,
     asignarCoordinador,
-    eliminarCurso
+    eliminarCurso,
+    obtenerCursosPorProfesor
 } from "./cursos.controller.js";
 
 import {
@@ -42,6 +43,9 @@ router.get("/grado/:grado", obtenerCursosPorGradoValidator, obtenerCursosPorGrad
 // Obtener cursos por ciclo escolar
 router.get("/ciclo/:ciclo", obtenerCursosPorCicloValidator, obtenerCursosPorCiclo);
 
+// Obtener cursos por profesor (donde tiene materias asignadas)
+router.get("/profesor/:uid", obtenerCursosPorProfesor);
+
 // Obtener cursos por coordinador
 router.get("/coordinador/:uid", obtenerCursosPorCoordinadorValidator, obtenerCursosPorCoordinador);
 
@@ -54,7 +58,7 @@ router.put("/:id", actualizarCursoValidator, actualizarCurso);
 // Asignar coordinador a un curso
 router.patch("/asignar-coordinador/:id", asignarCoordinadorValidator, asignarCoordinador);
 
-// Eliminar curso (lógico)
+// Eliminar curso (lÃ³gico)
 router.delete("/:id", eliminarCursoValidator, eliminarCurso);
 
 export default router;

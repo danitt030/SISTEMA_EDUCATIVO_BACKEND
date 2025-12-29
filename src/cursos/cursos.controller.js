@@ -1,4 +1,5 @@
-import Curso from "./cursos.model.js";
+﻿import Curso from "./cursos.model.js";
+import Materia from "../materia/materia.model.js";
 
 // Crear un nuevo curso
 export const crearCurso = async (req, res) => {
@@ -15,7 +16,7 @@ export const crearCurso = async (req, res) => {
         if (err.code === 11000) {
             return res.status(400).json({
                 success: false,
-                message: "Ya existe un curso con esa combinación de nivel, grado, sección, jornada y ciclo escolar"
+                message: "Ya existe un curso con esa combinaciÃ³n de nivel, grado, secciÃ³n, jornada y ciclo escolar"
             });
         }
         return res.status(500).json({
@@ -35,7 +36,7 @@ export const obtenerCursos = async (req, res) => {
         const [total, cursos] = await Promise.all([
             Curso.countDocuments(query),
             Curso.find(query)
-                .populate("coordinador", "name surname email codigoEmpleado")
+                .populate("coordinador", "name surname email codigoEmpleado").populate("profesor", "name surname email codigoEmpleado")
                 .skip(Number(desde))
                 .limit(Number(limite))
                 .sort({ createdAt: -1 })
@@ -60,7 +61,7 @@ export const obtenerCursoPorId = async (req, res) => {
     try {
         const { id } = req.params;
         const curso = await Curso.findById(id)
-            .populate("coordinador", "name surname email codigoEmpleado");
+            .populate("coordinador", "name surname email codigoEmpleado").populate("profesor", "name surname email codigoEmpleado");
 
         if (!curso) {
             return res.status(404).json({
@@ -92,7 +93,7 @@ export const obtenerCursosPorNivel = async (req, res) => {
         const [total, cursos] = await Promise.all([
             Curso.countDocuments(query),
             Curso.find(query)
-                .populate("coordinador", "name surname email codigoEmpleado")
+                .populate("coordinador", "name surname email codigoEmpleado").populate("profesor", "name surname email codigoEmpleado")
                 .skip(Number(desde))
                 .limit(Number(limite))
                 .sort({ grado: 1, seccion: 1 })
@@ -122,7 +123,7 @@ export const obtenerCursosPorGrado = async (req, res) => {
         const [total, cursos] = await Promise.all([
             Curso.countDocuments(query),
             Curso.find(query)
-                .populate("coordinador", "name surname email codigoEmpleado")
+                .populate("coordinador", "name surname email codigoEmpleado").populate("profesor", "name surname email codigoEmpleado")
                 .skip(Number(desde))
                 .limit(Number(limite))
                 .sort({ seccion: 1 })
@@ -152,7 +153,7 @@ export const obtenerCursosPorCiclo = async (req, res) => {
         const [total, cursos] = await Promise.all([
             Curso.countDocuments(query),
             Curso.find(query)
-                .populate("coordinador", "name surname email codigoEmpleado")
+                .populate("coordinador", "name surname email codigoEmpleado").populate("profesor", "name surname email codigoEmpleado")
                 .skip(Number(desde))
                 .limit(Number(limite))
                 .sort({ nivel: 1, grado: 1, seccion: 1 })
@@ -182,7 +183,7 @@ export const obtenerCursosPorCoordinador = async (req, res) => {
         const [total, cursos] = await Promise.all([
             Curso.countDocuments(query),
             Curso.find(query)
-                .populate("coordinador", "name surname email codigoEmpleado")
+                .populate("coordinador", "name surname email codigoEmpleado").populate("profesor", "name surname email codigoEmpleado")
                 .skip(Number(desde))
                 .limit(Number(limite))
                 .sort({ nivel: 1, grado: 1, seccion: 1 })
@@ -209,7 +210,7 @@ export const actualizarCurso = async (req, res) => {
         const { _id, status, ...resto } = req.body;
 
         const cursoActualizado = await Curso.findByIdAndUpdate(id, resto, { new: true })
-            .populate("coordinador", "name surname email codigoEmpleado");
+            .populate("coordinador", "name surname email codigoEmpleado").populate("profesor", "name surname email codigoEmpleado");
 
         if (!cursoActualizado) {
             return res.status(404).json({
@@ -227,7 +228,7 @@ export const actualizarCurso = async (req, res) => {
         if (err.code === 11000) {
             return res.status(400).json({
                 success: false,
-                message: "Ya existe un curso con esa combinación de nivel, grado, sección, jornada y ciclo escolar"
+                message: "Ya existe un curso con esa combinaciÃ³n de nivel, grado, secciÃ³n, jornada y ciclo escolar"
             });
         }
         return res.status(500).json({
@@ -248,7 +249,7 @@ export const asignarCoordinador = async (req, res) => {
             id,
             { coordinador },
             { new: true }
-        ).populate("coordinador", "name surname email codigoEmpleado");
+        ).populate("coordinador", "name surname email codigoEmpleado").populate("profesor", "name surname email codigoEmpleado");
 
         if (!cursoActualizado) {
             return res.status(404).json({
@@ -271,7 +272,7 @@ export const asignarCoordinador = async (req, res) => {
     }
 };
 
-// Eliminar curso (lógico)
+// Eliminar curso (lÃ³gico)
 export const eliminarCurso = async (req, res) => {
     try {
         const { id } = req.params;
@@ -297,6 +298,49 @@ export const eliminarCurso = async (req, res) => {
         return res.status(500).json({
             success: false,
             message: "Error al eliminar el curso",
+            error: err.message
+        });
+    }
+};
+
+// Obtener cursos donde el profesor tiene materias asignadas O está asignado directamente
+export const obtenerCursosPorProfesor = async (req, res) => {
+    try {
+        const { uid } = req.params;
+        const { limite = 50, desde = 0 } = req.query;
+
+        // Buscar cursos donde el profesor tiene materias asignadas
+        const cursosIdsMaterias = await Materia.find({ profesor: uid, status: true })
+            .distinct('curso');
+
+        // Buscar cursos donde el profesor está asignado directamente O tiene materias
+        const query = { 
+            $or: [
+                { profesor: uid },
+                { _id: { $in: cursosIdsMaterias } }
+            ],
+            status: true 
+        };
+
+        const [total, cursos] = await Promise.all([
+            Curso.countDocuments(query),
+            Curso.find(query)
+                .populate("coordinador", "name surname email codigoEmpleado")
+                .populate("profesor", "name surname email codigoEmpleado")
+                .skip(Number(desde))
+                .limit(Number(limite))
+                .sort({ nivel: 1, grado: 1, seccion: 1 })
+        ]);
+
+        return res.status(200).json({
+            success: true,
+            total,
+            cursos: cursos.map(curso => curso.toJSON())
+        });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error al obtener cursos del profesor",
             error: err.message
         });
     }
