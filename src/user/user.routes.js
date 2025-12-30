@@ -25,7 +25,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/users:
+ * /users:
  *   get:
  *     summary: Obtener todos los usuarios
  *     description: Retorna una lista con todos los usuarios del sistema
@@ -103,7 +103,7 @@ router.get("/", getUsersValidator, obtenerUsuarios);
 
 /**
  * @swagger
- * /api/users/role/{role}:
+ * /users/role/{role}:
  *   get:
  *     summary: Obtener usuarios por rol
  *     description: Retorna una lista de usuarios que tienen un rol específico
@@ -180,7 +180,7 @@ router.get("/role/:role", getUsersByRoleValidator, obtenerUsuariosPorRole);
 
 /**
  * @swagger
- * /api/users/{uid}:
+ * /users/{uid}:
  *   get:
  *     summary: Obtener usuario por ID
  *     description: Retorna los datos de un usuario específico mediante su ID
@@ -276,7 +276,7 @@ router.get("/:uid", getUserByIdValidator, obtenerUsuarioPorId);
 
 /**
  * @swagger
- * /api/users/{uid}:
+ * /users/{uid}:
  *   put:
  *     summary: Actualizar usuario
  *     description: Actualiza los datos de un usuario existente
@@ -366,7 +366,7 @@ router.put("/:uid", updateUserValidator, actualizarUsuario);
 
 /**
  * @swagger
- * /api/users/password/{uid}:
+ * /users/password/{uid}:
  *   patch:
  *     summary: Actualizar contraseña
  *     description: Actualiza la contraseña de un usuario. El usuario puede cambiar su propia contraseña o un admin puede cambiar la de cualquier usuario.
@@ -440,7 +440,7 @@ router.patch("/password/:uid", updatePasswordValidator, actualizarPassword);
 
 /**
  * @swagger
- * /api/users/role/{uid}:
+ * /users/role/{uid}:
  *   patch:
  *     summary: Actualizar rol de usuario
  *     description: Cambia el rol de un usuario existente. Solo administradores pueden realizar esta acción.
@@ -526,7 +526,7 @@ router.patch("/role/:uid", updateRoleValidator, actualizarRole);
 
 /**
  * @swagger
- * /api/users/{uid}:
+ * /users/{uid}:
  *   delete:
  *     summary: Eliminar usuario (borrado lógico)
  *     description: Realiza un borrado lógico del usuario, cambiando su estado a inactivo. Solo administradores pueden realizar esta acción.
@@ -585,7 +585,7 @@ router.delete("/:uid", deleteUserValidator, eliminarUsuario);
 
 /**
  * @swagger
- * /api/users/account/{uid}:
+ * /users/account/{uid}:
  *   delete:
  *     summary: Eliminar cuenta propia (borrado físico)
  *     description: Elimina permanentemente la cuenta del usuario. El usuario debe proporcionar su contraseña para confirmar la eliminación. Este es un borrado físico irreversible.
