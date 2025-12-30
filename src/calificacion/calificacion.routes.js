@@ -25,7 +25,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/calificaciones/registrar:
+ * /calificaciones/registrar:
  *   post:
  *     summary: Registrar calificación
  *     description: Registra una nueva calificación para un estudiante en una materia y bimestre específico
@@ -167,7 +167,7 @@ router.post("/registrar", registrarCalificacionValidator, registrarCalificacion)
 
 /**
  * @swagger
- * /api/calificaciones:
+ * /calificaciones:
  *   get:
  *     summary: Obtener todas las calificaciones
  *     description: Retorna una lista con todas las calificaciones del sistema
@@ -234,7 +234,7 @@ router.get("/", obtenerCalificacionesValidator, obtenerCalificaciones);
 
 /**
  * @swagger
- * /api/calificaciones/estudiante/{uid}/{ciclo}:
+ * /calificaciones/estudiante/{uid}/{ciclo}:
  *   get:
  *     summary: Obtener calificaciones por estudiante (Boleta)
  *     description: Retorna todas las calificaciones de un estudiante en un ciclo escolar específico
@@ -316,7 +316,7 @@ router.get("/estudiante/:uid/:ciclo", obtenerCalificacionesPorEstudianteValidato
 
 /**
  * @swagger
- * /api/calificaciones/boleta/{uid}/{ciclo}:
+ * /calificaciones/boleta/{uid}/{ciclo}:
  *   get:
  *     summary: Generar boleta en PDF
  *     description: Genera y descarga la boleta de calificaciones de un estudiante en formato PDF
@@ -371,7 +371,7 @@ router.get("/boleta/:uid/:ciclo", generarBoletaPDFValidator, generarBoletaPDF);
 
 /**
  * @swagger
- * /api/calificaciones/cuadro/{cursoId}/{materiaId}/{bimestre}:
+ * /calificaciones/cuadro/{cursoId}/{materiaId}/{bimestre}:
  *   get:
  *     summary: Obtener cuadro de notas
  *     description: Retorna las calificaciones de todos los estudiantes de un curso en una materia y bimestre específico
@@ -483,7 +483,7 @@ router.get("/cuadro/:cursoId/:materiaId/:bimestre", obtenerCuadroNotasValidator,
 
 /**
  * @swagger
- * /api/calificaciones/{id}:
+ * /calificaciones/{id}:
  *   get:
  *     summary: Obtener calificación por ID
  *     description: Retorna los datos de una calificación específica
@@ -547,7 +547,7 @@ router.get("/:id", obtenerCalificacionPorIdValidator, obtenerCalificacionPorId);
 
 /**
  * @swagger
- * /api/calificaciones/{id}:
+ * /calificaciones/{id}:
  *   put:
  *     summary: Editar calificación
  *     description: Actualiza los datos de una calificación existente
@@ -637,7 +637,7 @@ router.put("/:id", editarCalificacionValidator, editarCalificacion);
 
 /**
  * @swagger
- * /api/calificaciones/{id}:
+ * /calificaciones/{id}:
  *   delete:
  *     summary: Eliminar calificación
  *     description: Elimina permanentemente una calificación del sistema

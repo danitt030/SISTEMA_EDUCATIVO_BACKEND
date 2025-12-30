@@ -27,7 +27,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/asignaciones/inscribir:
+ * /asignaciones/inscribir:
  *   post:
  *     summary: Inscribir estudiante a un curso
  *     description: Crea una nueva asignación inscribiendo a un estudiante en un curso específico con su encargado
@@ -146,7 +146,7 @@ router.post("/inscribir", inscribirEstudianteValidator, inscribirEstudiante);
 
 /**
  * @swagger
- * /api/asignaciones:
+ * /asignaciones:
  *   get:
  *     summary: Obtener todas las asignaciones
  *     description: Retorna una lista con todas las asignaciones de estudiantes a cursos del sistema
@@ -223,7 +223,7 @@ router.get("/", obtenerAsignacionesValidator, obtenerAsignaciones);
 
 /**
  * @swagger
- * /api/asignaciones/curso/{cursoId}:
+ * /asignaciones/curso/{cursoId}:
  *   get:
  *     summary: Obtener estudiantes por curso
  *     description: Retorna todos los estudiantes asignados a un curso específico
@@ -304,7 +304,7 @@ router.get("/curso/:cursoId", obtenerEstudiantesPorCursoValidator, obtenerEstudi
 
 /**
  * @swagger
- * /api/asignaciones/estudiante/{uid}:
+ * /asignaciones/estudiante/{uid}:
  *   get:
  *     summary: Obtener cursos de un estudiante
  *     description: Retorna todos los cursos en los que está inscrito un estudiante
@@ -381,7 +381,7 @@ router.get("/estudiante/:uid", obtenerCursosDeEstudianteValidator, obtenerCursos
 
 /**
  * @swagger
- * /api/asignaciones/encargado/{uid}:
+ * /asignaciones/encargado/{uid}:
  *   get:
  *     summary: Obtener estudiantes por encargado (hijos)
  *     description: Retorna todos los estudiantes asignados a un encargado/padre específico
@@ -456,7 +456,7 @@ router.get("/encargado/:uid", obtenerEstudiantesPorEncargadoValidator, obtenerEs
 
 /**
  * @swagger
- * /api/asignaciones/{id}:
+ * /asignaciones/{id}:
  *   get:
  *     summary: Obtener asignación por ID
  *     description: Retorna los datos completos de una asignación específica
@@ -531,7 +531,7 @@ router.get("/:id", obtenerAsignacionPorIdValidator, obtenerAsignacionPorId);
 
 /**
  * @swagger
- * /api/asignaciones/{id}:
+ * /asignaciones/{id}:
  *   put:
  *     summary: Actualizar asignación
  *     description: Actualiza los datos de una asignación existente
@@ -612,7 +612,7 @@ router.put("/:id", actualizarAsignacionValidator, actualizarAsignacion);
 
 /**
  * @swagger
- * /api/asignaciones/cambiar-curso/{id}:
+ * /asignaciones/cambiar-curso/{id}:
  *   patch:
  *     summary: Cambiar curso (trasladar estudiante)
  *     description: Traslada a un estudiante de un curso a otro curso diferente
@@ -687,7 +687,7 @@ router.patch("/cambiar-curso/:id", cambiarCursoValidator, cambiarCurso);
 
 /**
  * @swagger
- * /api/asignaciones/{id}:
+ * /asignaciones/{id}:
  *   delete:
  *     summary: Eliminar asignación (dar de baja)
  *     description: Elimina una asignación, dando de baja a un estudiante de un curso

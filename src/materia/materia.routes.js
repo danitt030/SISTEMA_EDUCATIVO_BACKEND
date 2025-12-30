@@ -25,7 +25,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/materias/crearMateria:
+ * /materias/crearMateria:
  *   post:
  *     summary: Crear nueva materia
  *     description: Crea una nueva materia en el sistema y la asigna a un curso específico
@@ -125,7 +125,7 @@ router.post("/crearMateria", crearMateriaValidator, crearMateria);
 
 /**
  * @swagger
- * /api/materias:
+ * /materias:
  *   get:
  *     summary: Obtener todas las materias
  *     description: Retorna una lista con todas las materias del sistema
@@ -189,7 +189,7 @@ router.get("/", obtenerMateriasValidator, obtenerMaterias);
 
 /**
  * @swagger
- * /api/materias/curso/{cursoId}:
+ * /materias/curso/{cursoId}:
  *   get:
  *     summary: Obtener materias por curso
  *     description: Retorna todas las materias asociadas a un curso específico
@@ -257,7 +257,7 @@ router.get("/curso/:cursoId", obtenerMateriasPorCursoValidator, obtenerMateriasP
 
 /**
  * @swagger
- * /api/materias/profesor/{uid}:
+ * /materias/profesor/{uid}:
  *   get:
  *     summary: Obtener materias por profesor
  *     description: Retorna todas las materias asignadas a un profesor específico
@@ -323,7 +323,7 @@ router.get("/profesor/:uid", obtenerMateriasPorProfesorValidator, obtenerMateria
 
 /**
  * @swagger
- * /api/materias/{id}:
+ * /materias/{id}:
  *   get:
  *     summary: Obtener materia por ID
  *     description: Retorna los datos de una materia específica
@@ -398,7 +398,7 @@ router.get("/:id", obtenerMateriaPorIdValidator, obtenerMateriaPorId);
 
 /**
  * @swagger
- * /api/materias/{id}:
+ * /materias/{id}:
  *   put:
  *     summary: Actualizar materia
  *     description: Actualiza los datos de una materia existente
@@ -478,7 +478,7 @@ router.put("/:id", actualizarMateriaValidator, actualizarMateria);
 
 /**
  * @swagger
- * /api/materias/asignar-profesor/{id}:
+ * /materias/asignar-profesor/{id}:
  *   patch:
  *     summary: Asignar profesor a materia
  *     description: Asigna o reasigna un profesor a una materia específica
@@ -573,7 +573,7 @@ router.patch("/asignar-profesor/:id", asignarProfesorValidator, asignarProfesor)
 
 /**
  * @swagger
- * /api/materias/{id}:
+ * /materias/{id}:
  *   delete:
  *     summary: Eliminar materia (borrado lógico)
  *     description: Realiza un borrado lógico de la materia, cambiando su estado a inactivo

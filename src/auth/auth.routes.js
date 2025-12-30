@@ -7,7 +7,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/auth/register:
+ * /auth/register:
  *   post:
  *     summary: Registro de nuevo usuario
  *     description: Registra un nuevo usuario en el sistema. Acepta una imagen de perfil opcional.
@@ -161,7 +161,7 @@ router.post("/register", uploadProfilePicture.single("profilePicture"), register
 
 /**
  * @swagger
- * /api/auth/login:
+ * /auth/login:
  *   post:
  *     summary: Iniciar sesión
  *     description: Autentica un usuario mediante email/username y contraseña, retornando un token JWT

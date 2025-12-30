@@ -1,4 +1,4 @@
-﻿import { Router } from "express";
+import { Router } from "express";
 import {
     crearCurso,
     obtenerCursos,
@@ -30,10 +30,10 @@ const router = Router();
 
 /**
  * @swagger
- * /api/cursos/crearCurso:
+ * /cursos/crearCurso:
  *   post:
  *     summary: Crear nuevo curso
- *     description: Crea un nuevo curso en el sistema con todos sus datos académicos
+ *     description: Crea un nuevo curso en el sistema con todos sus datos acad�micos
  *     tags: [Cursos]
  *     security:
  *       - bearerAuth: []
@@ -58,12 +58,12 @@ const router = Router();
  *               grado:
  *                 type: string
  *                 enum: [PARVULOS_1, PARVULOS_2, PARVULOS_3, PREPARATORIA, PRIMERO_PRIMARIA, SEGUNDO_PRIMARIA, TERCERO_PRIMARIA, CUARTO_PRIMARIA, QUINTO_PRIMARIA, SEXTO_PRIMARIA, PRIMERO_BASICO, SEGUNDO_BASICO, TERCERO_BASICO]
- *                 description: Grado académico del curso
+ *                 description: Grado acad�mico del curso
  *                 example: QUINTO_PRIMARIA
  *               seccion:
  *                 type: string
  *                 enum: [A, B, C]
- *                 description: Sección del curso
+ *                 description: Secci�n del curso
  *                 example: A
  *               jornada:
  *                 type: string
@@ -77,7 +77,7 @@ const router = Router();
  *               capacidadMaxima:
  *                 type: integer
  *                 minimum: 1
- *                 description: Capacidad máxima de estudiantes (opcional)
+ *                 description: Capacidad m�xima de estudiantes (opcional)
  *                 example: 30
  *               coordinador:
  *                 type: string
@@ -120,12 +120,12 @@ const router = Router();
  *                       example: 30
  *                     nombre:
  *                       type: string
- *                       example: Quinto Primaria - Sección A
+ *                       example: Quinto Primaria - Secci�n A
  *                     estado:
  *                       type: boolean
  *                       example: true
  *       400:
- *         description: Error de validación
+ *         description: Error de validaci�n
  *         content:
  *           application/json:
  *             schema:
@@ -147,12 +147,12 @@ const router = Router();
  *         description: Error interno del servidor
  *     x-validaciones:
  *       - Campo "nivel": requerido, valores permitidos [PREPRIMARIA, PRIMARIA, BASICO]
- *       - Campo "grado": requerido, debe coincidir con uno de los grados válidos
+ *       - Campo "grado": requerido, debe coincidir con uno de los grados v�lidos
  *       - Campo "seccion": requerido, valores permitidos [A, B, C]
  *       - Campo "jornada": requerido, valores permitidos [MATUTINA, VESPERTINA]
  *       - Campo "cicloEscolar": requerido
  *       - Campo "capacidadMaxima": opcional, debe ser entero mayor a 0
- *       - Campo "coordinador": opcional, debe ser ID válido de MongoDB
+ *       - Campo "coordinador": opcional, debe ser ID v�lido de MongoDB
  *     x-middleware:
  *       - validateJWT
  *       - hasRoles
@@ -162,7 +162,7 @@ router.post("/crearCurso", crearCursoValidator, crearCurso);
 
 /**
  * @swagger
- * /api/cursos:
+ * /cursos:
  *   get:
  *     summary: Obtener todos los cursos
  *     description: Retorna una lista con todos los cursos del sistema
@@ -217,10 +217,10 @@ router.get("/", obtenerCursosValidator, obtenerCursos);
 
 /**
  * @swagger
- * /api/cursos/nivel/{nivel}:
+ * /cursos/nivel/{nivel}:
  *   get:
  *     summary: Obtener cursos por nivel educativo
- *     description: Retorna todos los cursos de un nivel educativo específico
+ *     description: Retorna todos los cursos de un nivel educativo espec�fico
  *     tags: [Cursos]
  *     security:
  *       - bearerAuth: []
@@ -261,7 +261,7 @@ router.get("/", obtenerCursosValidator, obtenerCursos);
  *                       nombre:
  *                         type: string
  *       400:
- *         description: Error de validación - Nivel inválido
+ *         description: Error de validaci�n - Nivel inv�lido
  *       401:
  *         description: No autorizado
  *       403:
@@ -269,7 +269,7 @@ router.get("/", obtenerCursosValidator, obtenerCursos);
  *       500:
  *         description: Error interno del servidor
  *     x-validaciones:
- *       - Parámetro "nivel": debe ser uno de [PREPRIMARIA, PRIMARIA, BASICO]
+ *       - Par�metro "nivel": debe ser uno de [PREPRIMARIA, PRIMARIA, BASICO]
  *     x-middleware:
  *       - validateJWT
  *       - hasRoles
@@ -279,10 +279,10 @@ router.get("/nivel/:nivel", obtenerCursosPorNivelValidator, obtenerCursosPorNive
 
 /**
  * @swagger
- * /api/cursos/grado/{grado}:
+ * /cursos/grado/{grado}:
  *   get:
  *     summary: Obtener cursos por grado
- *     description: Retorna todos los cursos de un grado específico
+ *     description: Retorna todos los cursos de un grado espec�fico
  *     tags: [Cursos]
  *     security:
  *       - bearerAuth: []
@@ -293,7 +293,7 @@ router.get("/nivel/:nivel", obtenerCursosPorNivelValidator, obtenerCursosPorNive
  *         schema:
  *           type: string
  *           enum: [PARVULOS_1, PARVULOS_2, PARVULOS_3, PREPARATORIA, PRIMERO_PRIMARIA, SEGUNDO_PRIMARIA, TERCERO_PRIMARIA, CUARTO_PRIMARIA, QUINTO_PRIMARIA, SEXTO_PRIMARIA, PRIMERO_BASICO, SEGUNDO_BASICO, TERCERO_BASICO]
- *         description: Grado académico a filtrar
+ *         description: Grado acad�mico a filtrar
  *         example: QUINTO_PRIMARIA
  *     responses:
  *       200:
@@ -308,7 +308,7 @@ router.get("/nivel/:nivel", obtenerCursosPorNivelValidator, obtenerCursosPorNive
  *                   items:
  *                     type: object
  *       400:
- *         description: Error de validación - Grado inválido
+ *         description: Error de validaci�n - Grado inv�lido
  *       401:
  *         description: No autorizado
  *       403:
@@ -316,7 +316,7 @@ router.get("/nivel/:nivel", obtenerCursosPorNivelValidator, obtenerCursosPorNive
  *       500:
  *         description: Error interno del servidor
  *     x-validaciones:
- *       - Parámetro "grado": debe ser uno de los grados válidos del sistema
+ *       - Par�metro "grado": debe ser uno de los grados v�lidos del sistema
  *     x-middleware:
  *       - validateJWT
  *       - hasRoles
@@ -326,10 +326,10 @@ router.get("/grado/:grado", obtenerCursosPorGradoValidator, obtenerCursosPorGrad
 
 /**
  * @swagger
- * /api/cursos/ciclo/{ciclo}:
+ * /cursos/ciclo/{ciclo}:
  *   get:
  *     summary: Obtener cursos por ciclo escolar
- *     description: Retorna todos los cursos de un ciclo escolar específico
+ *     description: Retorna todos los cursos de un ciclo escolar espec�fico
  *     tags: [Cursos]
  *     security:
  *       - bearerAuth: []
@@ -367,7 +367,7 @@ router.get("/grado/:grado", obtenerCursosPorGradoValidator, obtenerCursosPorGrad
  *                       nombre:
  *                         type: string
  *       400:
- *         description: Error de validación - Ciclo escolar requerido
+ *         description: Error de validaci�n - Ciclo escolar requerido
  *       401:
  *         description: No autorizado
  *       403:
@@ -375,7 +375,7 @@ router.get("/grado/:grado", obtenerCursosPorGradoValidator, obtenerCursosPorGrad
  *       500:
  *         description: Error interno del servidor
  *     x-validaciones:
- *       - Parámetro "ciclo": requerido, no puede estar vacío
+ *       - Par�metro "ciclo": requerido, no puede estar vac�o
  *     x-middleware:
  *       - validateJWT
  *       - hasRoles
@@ -385,7 +385,7 @@ router.get("/ciclo/:ciclo", obtenerCursosPorCicloValidator, obtenerCursosPorCicl
 
 /**
  * @swagger
- * /api/cursos/profesor/{uid}:
+ * /cursos/profesor/{uid}:
  *   get:
  *     summary: Obtener cursos por profesor
  *     description: Retorna todos los cursos donde el profesor tiene materias asignadas
@@ -431,17 +431,17 @@ router.get("/ciclo/:ciclo", obtenerCursosPorCicloValidator, obtenerCursosPorCicl
  *       500:
  *         description: Error interno del servidor
  *     x-middleware:
- *       - validateJWT (se asume, aunque no tiene validator específico)
+ *       - validateJWT (se asume, aunque no tiene validator espec�fico)
  *     x-roles-permitidos: Cualquier usuario autenticado
  */
 router.get("/profesor/:uid", obtenerCursosPorProfesor);
 
 /**
  * @swagger
- * /api/cursos/coordinador/{uid}:
+ * /cursos/coordinador/{uid}:
  *   get:
  *     summary: Obtener cursos por coordinador
- *     description: Retorna todos los cursos asignados a un coordinador específico
+ *     description: Retorna todos los cursos asignados a un coordinador espec�fico
  *     tags: [Cursos]
  *     security:
  *       - bearerAuth: []
@@ -481,7 +481,7 @@ router.get("/profesor/:uid", obtenerCursosPorProfesor);
  *                       coordinador:
  *                         type: object
  *       400:
- *         description: Error de validación - ID de coordinador inválido
+ *         description: Error de validaci�n - ID de coordinador inv�lido
  *       401:
  *         description: No autorizado
  *       403:
@@ -489,7 +489,7 @@ router.get("/profesor/:uid", obtenerCursosPorProfesor);
  *       500:
  *         description: Error interno del servidor
  *     x-validaciones:
- *       - Parámetro "uid": debe ser un ID de MongoDB válido
+ *       - Par�metro "uid": debe ser un ID de MongoDB v�lido
  *     x-middleware:
  *       - validateJWT
  *       - hasRoles
@@ -499,10 +499,10 @@ router.get("/coordinador/:uid", obtenerCursosPorCoordinadorValidator, obtenerCur
 
 /**
  * @swagger
- * /api/cursos/{id}:
+ * /cursos/{id}:
  *   get:
  *     summary: Obtener curso por ID
- *     description: Retorna los datos completos de un curso específico
+ *     description: Retorna los datos completos de un curso espec�fico
  *     tags: [Cursos]
  *     security:
  *       - bearerAuth: []
@@ -546,7 +546,7 @@ router.get("/coordinador/:uid", obtenerCursosPorCoordinadorValidator, obtenerCur
  *                     estado:
  *                       type: boolean
  *       400:
- *         description: Error de validación - ID inválido
+ *         description: Error de validaci�n - ID inv�lido
  *       401:
  *         description: No autorizado
  *       403:
@@ -556,7 +556,7 @@ router.get("/coordinador/:uid", obtenerCursosPorCoordinadorValidator, obtenerCur
  *       500:
  *         description: Error interno del servidor
  *     x-validaciones:
- *       - Parámetro "id": debe ser un ID de MongoDB válido y existir en la BD
+ *       - Par�metro "id": debe ser un ID de MongoDB v�lido y existir en la BD
  *     x-middleware:
  *       - validateJWT
  *       - hasRoles
@@ -566,7 +566,7 @@ router.get("/:id", obtenerCursoPorIdValidator, obtenerCursoPorId);
 
 /**
  * @swagger
- * /api/cursos/{id}:
+ * /cursos/{id}:
  *   put:
  *     summary: Actualizar curso
  *     description: Actualiza los datos de un curso existente
@@ -625,7 +625,7 @@ router.get("/:id", obtenerCursoPorIdValidator, obtenerCursoPorId);
  *                 curso:
  *                   type: object
  *       400:
- *         description: Error de validación
+ *         description: Error de validaci�n
  *       401:
  *         description: No autorizado
  *       403:
@@ -635,7 +635,7 @@ router.get("/:id", obtenerCursoPorIdValidator, obtenerCursoPorId);
  *       500:
  *         description: Error interno del servidor
  *     x-validaciones:
- *       - Parámetro "id": debe ser un ID de MongoDB válido y existir en la BD
+ *       - Par�metro "id": debe ser un ID de MongoDB v�lido y existir en la BD
  *       - Campos opcionales deben cumplir con los valores permitidos
  *       - Campo "capacidadMaxima": debe ser entero mayor a 0
  *     x-middleware:
@@ -647,10 +647,10 @@ router.put("/:id", actualizarCursoValidator, actualizarCurso);
 
 /**
  * @swagger
- * /api/cursos/asignar-coordinador/{id}:
+ * /cursos/asignar-coordinador/{id}:
  *   patch:
  *     summary: Asignar coordinador a un curso
- *     description: Asigna o reasigna un coordinador a un curso específico
+ *     description: Asigna o reasigna un coordinador a un curso espec�fico
  *     tags: [Cursos]
  *     security:
  *       - bearerAuth: []
@@ -706,7 +706,7 @@ router.put("/:id", actualizarCursoValidator, actualizarCurso);
  *                           type: string
  *                           example: COORDINADOR_ROLE
  *       400:
- *         description: Error de validación - ID inválido o usuario no es coordinador
+ *         description: Error de validaci�n - ID inv�lido o usuario no es coordinador
  *       401:
  *         description: No autorizado
  *       403:
@@ -716,8 +716,8 @@ router.put("/:id", actualizarCursoValidator, actualizarCurso);
  *       500:
  *         description: Error interno del servidor
  *     x-validaciones:
- *       - Parámetro "id": debe ser un ID de MongoDB válido y existir en la BD
- *       - Campo "coordinador": requerido, debe ser un ID de MongoDB válido
+ *       - Par�metro "id": debe ser un ID de MongoDB v�lido y existir en la BD
+ *       - Campo "coordinador": requerido, debe ser un ID de MongoDB v�lido
  *       - El usuario asignado debe tener rol COORDINADOR_ROLE
  *       - El coordinador debe existir en la base de datos
  *     x-middleware:
@@ -729,10 +729,10 @@ router.patch("/asignar-coordinador/:id", asignarCoordinadorValidator, asignarCoo
 
 /**
  * @swagger
- * /api/cursos/{id}:
+ * /cursos/{id}:
  *   delete:
- *     summary: Eliminar curso (borrado lógico)
- *     description: Realiza un borrado lógico del curso, cambiando su estado a inactivo
+ *     summary: Eliminar curso (borrado l�gico)
+ *     description: Realiza un borrado l�gico del curso, cambiando su estado a inactivo
  *     tags: [Cursos]
  *     security:
  *       - bearerAuth: []
@@ -746,7 +746,7 @@ router.patch("/asignar-coordinador/:id", asignarCoordinadorValidator, asignarCoo
  *         example: 507f1f77bcf86cd799439015
  *     responses:
  *       200:
- *         description: Curso eliminado exitosamente (borrado lógico)
+ *         description: Curso eliminado exitosamente (borrado l�gico)
  *         content:
  *           application/json:
  *             schema:
@@ -766,7 +766,7 @@ router.patch("/asignar-coordinador/:id", asignarCoordinadorValidator, asignarCoo
  *                       type: boolean
  *                       example: false
  *       400:
- *         description: Error de validación - ID inválido
+ *         description: Error de validaci�n - ID inv�lido
  *       401:
  *         description: No autorizado
  *       403:
@@ -776,12 +776,12 @@ router.patch("/asignar-coordinador/:id", asignarCoordinadorValidator, asignarCoo
  *       500:
  *         description: Error interno del servidor
  *     x-validaciones:
- *       - Parámetro "id": debe ser un ID de MongoDB válido y existir en la BD
+ *       - Par�metro "id": debe ser un ID de MongoDB v�lido y existir en la BD
  *     x-middleware:
  *       - validateJWT
  *       - hasRoles
  *     x-roles-permitidos: ADMIN_ROLE
- *     x-nota: Este endpoint realiza un borrado lógico, no elimina físicamente el registro
+ *     x-nota: Este endpoint realiza un borrado l�gico, no elimina f�sicamente el registro
  */
 router.delete("/:id", eliminarCursoValidator, eliminarCurso);
 
