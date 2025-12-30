@@ -1,6 +1,14 @@
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 
+// URL base del servidor
+const getServerUrl = () => {
+    if (process.env.NODE_ENV === 'production') {
+        return "https://sistema-educativo-backend.vercel.app/sistemaEducativo/v1";
+    }
+    return "http://127.0.0.1:3002/sistemaEducativo/v1";
+};
+
 const options = {
     definition: { 
         openapi: "3.0.0",
@@ -15,9 +23,7 @@ const options = {
         },
         servers: [
             {
-                url: process.env.NODE_ENV === 'production' 
-                    ? `https://${process.env.VERCEL_URL}/sistemaEducativo/v1`
-                    : "http://127.0.0.1:3002/sistemaEducativo/v1",
+                url: getServerUrl(),
                 description: process.env.NODE_ENV === 'production' ? 'Servidor de Producción' : 'Servidor de Desarrollo'
             }
         ],
